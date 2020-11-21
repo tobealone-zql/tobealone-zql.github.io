@@ -218,7 +218,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2020-11-21 16:24:42 / 修改时间：16:46:41" itemprop="dateCreated datePublished" datetime="2020-11-21T16:24:42+08:00">2020-11-21</time>
+      <time title="创建时间：2020-11-21 16:24:42 / 修改时间：16:51:51" itemprop="dateCreated datePublished" datetime="2020-11-21T16:24:42+08:00">2020-11-21</time>
     </span>
 
   
@@ -231,15 +231,50 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Hexo初始化</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/21/Hexo%E5%88%9D%E5%A7%8B%E5%8C%96/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <a id="more"></a>
+
+<h3 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a>安装</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>安装</p>
+</li>
+<li><p>实例GitHub号</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用户名：ergouzi</span><br><span class="line">账号(注册邮箱): 55252662@qq.com</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-Hexo安装"><a href="#2-Hexo安装" class="headerlink" title="2. Hexo安装"></a>2. Hexo安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line"># 选择一个安装位置进行初始化安装  myhexo为生成的hexo文件夹名称</span><br><span class="line">hexo init myhexo</span><br><span class="line">cd myhexo</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Next安装"><a href="#3-Next安装" class="headerlink" title="3. Next安装"></a>3. Next安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd myhexo&#x2F;</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;next-theme&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-使用Next主题"><a href="#4-使用Next主题" class="headerlink" title="4. 使用Next主题"></a>4. 使用Next主题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-配置GitHub"><a href="#5-配置GitHub" class="headerlink" title="5. 配置GitHub"></a>5. 配置GitHub</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1&gt; 创建GitHub账号</span><br><span class="line">2&gt; 创建GitHub仓库，仓库命名格式固定,不可修改，格式为：GitHub用户名.github.io   例：ergouzi.github.io</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Git生成密钥-绑定GitHub"><a href="#6-Git生成密钥-绑定GitHub" class="headerlink" title="6. Git生成密钥 绑定GitHub"></a>6. Git生成密钥 绑定GitHub</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;   </span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br><span class="line"># 生成ssh密钥文件</span><br><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</span><br><span class="line"># 打开GitHub_Settings_keys页面[https:&#x2F;&#x2F;link.zhihu.com&#x2F;?target&#x3D;https%3A&#x2F;&#x2F;github.com&#x2F;settings&#x2F;keys] ，新建new SSH Key</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-保存站点信息"><a href="#7-保存站点信息" class="headerlink" title="7. 保存站点信息"></a>7. 保存站点信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置</span><br><span class="line">deploy: </span><br><span class="line">  type: &#39;git&#39;</span><br><span class="line">  repo: git@github.com:ergouzi&#x2F;ergouzi.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-安装部署插件"><a href="#8-安装部署插件" class="headerlink" title="8. 安装部署插件"></a>8. 安装部署插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="9-访问网址"><a href="#9-访问网址" class="headerlink" title="9. 访问网址"></a>9. 访问网址</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ergouzi.github.io</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-设置图片引用"><a href="#10-设置图片引用" class="headerlink" title="10. 设置图片引用"></a>10. 设置图片引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置 创建新的博客后会生成同名文件夹</span><br><span class="line">post_asset_folder: true</span><br><span class="line"># 下载插件</span><br><span class="line">npm install https:&#x2F;&#x2F;github.com&#x2F;7ym0n&#x2F;hexo-asset-image --sa</span><br><span class="line"># 图片引用格式</span><br><span class="line">![xxx](xxx&#x2F;xxx.png)</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-优化"><a href="#11-优化" class="headerlink" title="11. 优化"></a>11. 优化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置 改为中文</span><br><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
+<h3 id="12-部署"><a href="#12-部署" class="headerlink" title="12. 部署"></a>12. 部署</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="另："><a href="#另：" class="headerlink" title="另："></a>另：</h2><p>​       本文未能细致到傻瓜式操作的程度，有些细节还是要参考其他文章.</p>
+<p><strong>教程参考:</strong></p>
+<p>​                <a target="_blank" rel="noopener" href="https://suyin-blog.club/2020/323EH2Y/">https://suyin-blog.club/2020/323EH2Y/</a></p>
+<p>​                <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">https://zhuanlan.zhihu.com/p/26625249</a></p>
+<p>​                <a target="_blank" rel="noopener" href="https://blog.csdn.net/science_Lee/article/details/84633237">https://blog.csdn.net/science_Lee/article/details/84633237</a></p>
+
       
     </div>
 
