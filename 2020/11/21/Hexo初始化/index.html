@@ -23,28 +23,32 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="走">
-<meta property="og:url" content="http://example.com/index.html">
+<meta name="description" content="1. 环境准备 Node.js安装  Git安装  实例GitHub号   12用户名：ergouzi账号(注册邮箱): 55252662@qq.com    2. Hexo安装12345npm install -g hexo-cli# 选择一个安装位置进行初始化安装  myhexo为生成的hexo文件夹名称hexo init myhexocd myhexonpm install  3. Ne">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo初始化">
+<meta property="og:url" content="http://example.com/2020/11/21/Hexo%E5%88%9D%E5%A7%8B%E5%8C%96/index.html">
 <meta property="og:site_name" content="走">
+<meta property="og:description" content="1. 环境准备 Node.js安装  Git安装  实例GitHub号   12用户名：ergouzi账号(注册邮箱): 55252662@qq.com    2. Hexo安装12345npm install -g hexo-cli# 选择一个安装位置进行初始化安装  myhexo为生成的hexo文件夹名称hexo init myhexocd myhexonpm install  3. Ne">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-21T09:05:58.904Z">
+<meta property="article:modified_time" content="2020-11-21T09:08:01.511Z">
 <meta property="article:author" content="今日">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2020/11/21/Hexo%E5%88%9D%E5%A7%8B%E5%8C%96/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
-<title>走</title>
+<title>Hexo初始化 | 走</title>
   
 
 
@@ -129,7 +133,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -142,6 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">1. 环境准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Hexo%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">2. Hexo安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Next%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">3. Next安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8Next%E4%B8%BB%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">4. 使用Next主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E9%85%8D%E7%BD%AEGitHub"><span class="nav-number">5.</span> <span class="nav-text">5. 配置GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Git%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5-%E7%BB%91%E5%AE%9AGitHub"><span class="nav-number">6.</span> <span class="nav-text">6. Git生成密钥 绑定GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E4%BF%9D%E5%AD%98%E7%AB%99%E7%82%B9%E4%BF%A1%E6%81%AF"><span class="nav-number">7.</span> <span class="nav-text">7. 保存站点信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6"><span class="nav-number">8.</span> <span class="nav-text">8. 安装部署插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-%E8%AE%BF%E9%97%AE%E7%BD%91%E5%9D%80"><span class="nav-number">9.</span> <span class="nav-text">9. 访问网址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-%E8%AE%BE%E7%BD%AE%E5%9B%BE%E7%89%87%E5%BC%95%E7%94%A8"><span class="nav-number">10.</span> <span class="nav-text">10. 设置图片引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-%E4%BC%98%E5%8C%96"><span class="nav-number">11.</span> <span class="nav-text">11. 优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-%E9%83%A8%E7%BD%B2"><span class="nav-number">12.</span> <span class="nav-text">12. 部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%A6%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">另：</span></a></div>
         </section>
         <!--/noindex-->
 
@@ -183,9 +188,10 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
@@ -205,9 +211,9 @@
       <meta itemprop="name" content="走">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/21/Hexo%E5%88%9D%E5%A7%8B%E5%8C%96/" class="post-title-link" itemprop="url">Hexo初始化</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Hexo初始化
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -231,7 +237,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <a id="more"></a>
+        <a id="more"></a>
 
 <h3 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h3><ul>
 <li><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a>安装</p>
@@ -275,7 +281,6 @@
 <p>​                <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">https://zhuanlan.zhihu.com/p/26625249</a></p>
 <p>​                <a target="_blank" rel="noopener" href="https://blog.csdn.net/science_Lee/article/details/84633237">https://blog.csdn.net/science_Lee/article/details/84633237</a></p>
 
-      
     </div>
 
     
@@ -283,90 +288,22 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/11/21/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/21/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="今日">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="走">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/21/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2020-11-21 16:59:12 / 修改时间：17:07:47" itemprop="dateCreated datePublished" datetime="2020-11-21T16:59:12+08:00">2020-11-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <a id="more"></a>
-<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<p><img src="/2020/11/21/hello-world/SunFlowersStorm_EN-AU8863925685_1920x1080.jpg"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
