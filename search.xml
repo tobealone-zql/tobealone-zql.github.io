@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Docker安装Redis</title>
-    <url>/2020/12/03/Docker%E5%AE%89%E8%A3%85Redis/</url>
-    <content><![CDATA[<h4 id="拉取镜像"><a href="#拉取镜像" class="headerlink" title="拉取镜像"></a>拉取镜像</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker pull redis</span><br></pre></td></tr></table></figure>
-
-<h4 id="新建data和conf两个文件夹"><a href="#新建data和conf两个文件夹" class="headerlink" title="新建data和conf两个文件夹"></a>新建<code>data</code>和<code>conf</code>两个文件夹</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir -p &#x2F;home&#x2F;docker_data&#x2F;redis&#x2F;data</span><br><span class="line">mkdir -p &#x2F;home&#x2F;docker_data&#x2F;redis&#x2F;conf</span><br></pre></td></tr></table></figure>
-
-<h4 id="增加配置文件-redis-conf"><a href="#增加配置文件-redis-conf" class="headerlink" title="增加配置文件 redis.conf"></a>增加配置文件 <code>redis.conf</code></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 在刚才新建的redis&#x2F;conf中新建文件redis.conf 内容如下：</span><br><span class="line">#bind 127.0.0.1 </span><br><span class="line">protected-mode no </span><br><span class="line">appendonly yes </span><br></pre></td></tr></table></figure>
-
-<h4 id="创建redis容器并启动"><a href="#创建redis容器并启动" class="headerlink" title="创建redis容器并启动"></a>创建<code>redis</code>容器并启动</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name redis -p 13913:6379 --privileged&#x3D;true  -v &#x2F;home&#x2F;docker_data&#x2F;redis&#x2F;data:&#x2F;data -v &#x2F;home&#x2F;docker_data&#x2F;redis&#x2F;conf&#x2F;redis.conf:&#x2F;etc&#x2F;redis&#x2F;redis.conf -d redis redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf</span><br></pre></td></tr></table></figure>
-
-<h4 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h4><ul>
-<li><a href="https://blog.csdn.net/u010358168/article/details/97143703">https://blog.csdn.net/u010358168/article/details/97143703</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CentOS7初始化及基本操作</title>
     <url>/2020/11/30/CentOS7%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="改为静态IP"><a href="#改为静态IP" class="headerlink" title="改为静态IP"></a>改为静态IP</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 编辑网卡配置文件</span><br><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</span><br></pre></td></tr></table></figure>
@@ -115,21 +96,30 @@
       </tags>
   </entry>
   <entry>
+    <title>Docker安装Redis</title>
+    <url>/2020/12/03/Docker%E5%AE%89%E8%A3%85Redis/</url>
+    <content><![CDATA[<h4 id="拉取镜像"><a href="#拉取镜像" class="headerlink" title="拉取镜像"></a>拉取镜像</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker pull redis</span><br></pre></td></tr></table></figure>
+
+<h4 id="新建data和conf两个文件夹"><a href="#新建data和conf两个文件夹" class="headerlink" title="新建data和conf两个文件夹"></a>新建<code>data</code>和<code>conf</code>两个文件夹</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir -p &#x2F;home&#x2F;docker_data&#x2F;redis&#x2F;data</span><br><span class="line">mkdir -p &#x2F;home&#x2F;docker_data&#x2F;redis&#x2F;conf</span><br></pre></td></tr></table></figure>
+
+<h4 id="增加配置文件-redis-conf"><a href="#增加配置文件-redis-conf" class="headerlink" title="增加配置文件 redis.conf"></a>增加配置文件 <code>redis.conf</code></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 在刚才新建的redis&#x2F;conf中新建文件redis.conf 内容如下：</span><br><span class="line">#bind 127.0.0.1 </span><br><span class="line">protected-mode no </span><br><span class="line">appendonly yes </span><br></pre></td></tr></table></figure>
+
+<h4 id="创建redis容器并启动"><a href="#创建redis容器并启动" class="headerlink" title="创建redis容器并启动"></a>创建<code>redis</code>容器并启动</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name redis -p 13913:6379 --privileged&#x3D;true  -v &#x2F;home&#x2F;docker_data&#x2F;redis&#x2F;data:&#x2F;data -v &#x2F;home&#x2F;docker_data&#x2F;redis&#x2F;conf&#x2F;redis.conf:&#x2F;etc&#x2F;redis&#x2F;redis.conf -d redis redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf</span><br></pre></td></tr></table></figure>
+
+<h4 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h4><ul>
+<li><a href="https://blog.csdn.net/u010358168/article/details/97143703">https://blog.csdn.net/u010358168/article/details/97143703</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git操作</title>
     <url>/2020/11/30/Git%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h4 id="git-pull-push每次都需要输入密码问题"><a href="#git-pull-push每次都需要输入密码问题" class="headerlink" title="git pull/push每次都需要输入密码问题"></a>git pull/push每次都需要输入密码问题</h4>]]></content>
       <tags>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mysql基本操作</title>
-    <url>/2020/12/02/Mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h4 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set password for root@localhost &#x3D; password(&quot;123456&quot;); </span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -191,6 +181,16 @@
 ]]></content>
       <tags>
         <tag>Maven</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mysql基本操作</title>
+    <url>/2020/12/02/Mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h4 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set password for root@localhost &#x3D; password(&quot;123456&quot;); </span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Mysql</tag>
       </tags>
   </entry>
   <entry>
