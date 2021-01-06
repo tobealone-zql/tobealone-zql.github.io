@@ -96,6 +96,14 @@
       </tags>
   </entry>
   <entry>
+    <title>Git操作</title>
+    <url>/2020/11/30/Git%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h4 id="git-pull-push每次都需要输入密码问题"><a href="#git-pull-push每次都需要输入密码问题" class="headerlink" title="git pull/push每次都需要输入密码问题"></a>git pull/push每次都需要输入密码问题</h4>]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Docker安装Redis</title>
     <url>/2020/12/03/Docker%E5%AE%89%E8%A3%85Redis/</url>
     <content><![CDATA[<h4 id="拉取镜像"><a href="#拉取镜像" class="headerlink" title="拉取镜像"></a>拉取镜像</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker pull redis</span><br></pre></td></tr></table></figure>
@@ -112,14 +120,6 @@
 ]]></content>
       <tags>
         <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git操作</title>
-    <url>/2020/11/30/Git%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h4 id="git-pull-push每次都需要输入密码问题"><a href="#git-pull-push每次都需要输入密码问题" class="headerlink" title="git pull/push每次都需要输入密码问题"></a>git pull/push每次都需要输入密码问题</h4>]]></content>
-      <tags>
-        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
