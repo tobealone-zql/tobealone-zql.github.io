@@ -254,6 +254,205 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/14/Hexo%E5%88%9D%E5%A7%8B%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="今日">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="走">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/01/14/Hexo%E5%88%9D%E5%A7%8B%E5%8C%96/" class="post-title-link" itemprop="url">Hexo初始</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-01-14 00:10:04" itemprop="dateCreated datePublished" datetime="2021-01-14T00:10:04+08:00">2021-01-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-12-04 09:41:44" itemprop="dateModified" datetime="2020-12-04T09:41:44+08:00">2020-12-04</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <a id="more"></a>
+
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a>安装</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>安装</p>
+</li>
+<li><p>实例GitHub号</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用户名：ergouzi</span><br><span class="line">账号(注册邮箱): 55252662@qq.com</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line"># 选择一个安装位置进行初始化安装  myhexo为生成的hexo文件夹名称</span><br><span class="line">hexo init myhexo</span><br><span class="line">cd myhexo</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h3 id="Next安装"><a href="#Next安装" class="headerlink" title="Next安装"></a>Next安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd myhexo&#x2F;</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;next-theme&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用Next主题"><a href="#使用Next主题" class="headerlink" title="使用Next主题"></a>使用Next主题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置GitHub"><a href="#配置GitHub" class="headerlink" title="配置GitHub"></a>配置GitHub</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1&gt; 创建GitHub账号</span><br><span class="line">2&gt; 创建GitHub仓库，仓库命名格式固定,不可修改，格式为：GitHub用户名.github.io   例：ergouzi.github.io</span><br></pre></td></tr></table></figure>
+
+<h3 id="Git生成密钥-绑定GitHub"><a href="#Git生成密钥-绑定GitHub" class="headerlink" title="Git生成密钥 绑定GitHub"></a>Git生成密钥 绑定GitHub</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;   </span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br><span class="line"># 生成ssh密钥文件</span><br><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</span><br><span class="line"># 打开GitHub_Settings_keys页面[https:&#x2F;&#x2F;link.zhihu.com&#x2F;?target&#x3D;https%3A&#x2F;&#x2F;github.com&#x2F;settings&#x2F;keys] ，新建new SSH Key</span><br></pre></td></tr></table></figure>
+
+<h3 id="保存站点信息"><a href="#保存站点信息" class="headerlink" title="保存站点信息"></a>保存站点信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置</span><br><span class="line">deploy: </span><br><span class="line">  type: &#39;git&#39;</span><br><span class="line">  repo: git@github.com:ergouzi&#x2F;ergouzi.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="安装部署插件"><a href="#安装部署插件" class="headerlink" title="安装部署插件"></a>安装部署插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="访问网址"><a href="#访问网址" class="headerlink" title="访问网址"></a>访问网址</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ergouzi.github.io</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置图片引用"><a href="#设置图片引用" class="headerlink" title="设置图片引用"></a>设置图片引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置 创建新的博客后会生成同名文件夹</span><br><span class="line">post_asset_folder: true</span><br><span class="line"># 下载插件</span><br><span class="line">npm install https:&#x2F;&#x2F;github.com&#x2F;7ym0n&#x2F;hexo-asset-image --sa</span><br><span class="line"># 图片引用格式</span><br><span class="line">![xxx](xxx&#x2F;xxx.png)</span><br></pre></td></tr></table></figure>
+
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置 改为中文</span><br><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="另："><a href="#另：" class="headerlink" title="另："></a>另：</h2><p>​       本文未能细致到傻瓜式操作的程度，有些细节还是要参考其他文章.</p>
+<p><strong>教程参考:</strong></p>
+<p>​                <a target="_blank" rel="noopener" href="https://suyin-blog.club/2020/323EH2Y/">https://suyin-blog.club/2020/323EH2Y/</a></p>
+<p>​                <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">https://zhuanlan.zhihu.com/p/26625249</a></p>
+<p>​                <a target="_blank" rel="noopener" href="https://blog.csdn.net/science_Lee/article/details/84633237">https://blog.csdn.net/science_Lee/article/details/84633237</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/14/CentOS7%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="今日">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="走">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/01/14/CentOS7%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">CentOS7初始化及基本操作</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-01-14 00:10:04" itemprop="dateCreated datePublished" datetime="2021-01-14T00:10:04+08:00">2021-01-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-12-10 11:03:20" itemprop="dateModified" datetime="2020-12-10T11:03:20+08:00">2020-12-10</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="改为静态IP"><a href="#改为静态IP" class="headerlink" title="改为静态IP"></a>改为静态IP</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 编辑网卡配置文件</span><br><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 修改相关配置</span><br><span class="line">BOOTPROTO&#x3D;&quot;static&quot; #dhcp改为static </span><br><span class="line">ONBOOT&#x3D;&quot;yes&quot; #开机启用本配置</span><br><span class="line">IPADDR&#x3D;192.168.7.106 #静态IP</span><br><span class="line">GATEWAY&#x3D;192.168.7.1 #默认网关</span><br><span class="line">NETMASK&#x3D;255.255.255.0 #子网掩码</span><br><span class="line">DNS1&#x3D;192.168.7.1 #DNS 配置</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 重启网络服务</span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查看IP</span><br><span class="line">ip addr</span><br></pre></td></tr></table></figure>
+
+<h2 id="yum安装wget"><a href="#yum安装wget" class="headerlink" title="yum安装wget"></a>yum安装wget</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="更改yum镜像源"><a href="#更改yum镜像源" class="headerlink" title="更改yum镜像源"></a>更改yum镜像源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 备份原来的配置</span><br><span class="line">mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup</span><br><span class="line"># 下载ailiyun的yum源配置文件到&#x2F;etc&#x2F;yum.repos.d&#x2F;</span><br><span class="line">wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-7.repo</span><br><span class="line"># 运行yum makecache生成缓存</span><br><span class="line">yum makecache</span><br><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/09/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%88%9D%E8%AF%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -651,205 +850,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <h4 id="手动安装jar包"><a href="#手动安装jar包" class="headerlink" title="手动安装jar包"></a>手动安装jar包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -DgroupId&#x3D;de.codecentric -DartifactId&#x3D;spring-boot-admin-starter-client -Dversion&#x3D;2.3.0 -Dpackaging&#x3D;jar -Dfile&#x3D;E:\spring-boot-admin-starter-client-2.3.0.jar</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/30/Hexo%E5%88%9D%E5%A7%8B%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="今日">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="走">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/30/Hexo%E5%88%9D%E5%A7%8B%E5%8C%96/" class="post-title-link" itemprop="url">Hexo初始</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-11-30 11:04:58" itemprop="dateCreated datePublished" datetime="2020-11-30T11:04:58+08:00">2020-11-30</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-04 09:41:44" itemprop="dateModified" datetime="2020-12-04T09:41:44+08:00">2020-12-04</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <a id="more"></a>
-
-<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ul>
-<li><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a>安装</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>安装</p>
-</li>
-<li><p>实例GitHub号</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用户名：ergouzi</span><br><span class="line">账号(注册邮箱): 55252662@qq.com</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line"># 选择一个安装位置进行初始化安装  myhexo为生成的hexo文件夹名称</span><br><span class="line">hexo init myhexo</span><br><span class="line">cd myhexo</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<h3 id="Next安装"><a href="#Next安装" class="headerlink" title="Next安装"></a>Next安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd myhexo&#x2F;</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;next-theme&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用Next主题"><a href="#使用Next主题" class="headerlink" title="使用Next主题"></a>使用Next主题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置GitHub"><a href="#配置GitHub" class="headerlink" title="配置GitHub"></a>配置GitHub</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1&gt; 创建GitHub账号</span><br><span class="line">2&gt; 创建GitHub仓库，仓库命名格式固定,不可修改，格式为：GitHub用户名.github.io   例：ergouzi.github.io</span><br></pre></td></tr></table></figure>
-
-<h3 id="Git生成密钥-绑定GitHub"><a href="#Git生成密钥-绑定GitHub" class="headerlink" title="Git生成密钥 绑定GitHub"></a>Git生成密钥 绑定GitHub</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;   </span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br><span class="line"># 生成ssh密钥文件</span><br><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</span><br><span class="line"># 打开GitHub_Settings_keys页面[https:&#x2F;&#x2F;link.zhihu.com&#x2F;?target&#x3D;https%3A&#x2F;&#x2F;github.com&#x2F;settings&#x2F;keys] ，新建new SSH Key</span><br></pre></td></tr></table></figure>
-
-<h3 id="保存站点信息"><a href="#保存站点信息" class="headerlink" title="保存站点信息"></a>保存站点信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置</span><br><span class="line">deploy: </span><br><span class="line">  type: &#39;git&#39;</span><br><span class="line">  repo: git@github.com:ergouzi&#x2F;ergouzi.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="安装部署插件"><a href="#安装部署插件" class="headerlink" title="安装部署插件"></a>安装部署插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="访问网址"><a href="#访问网址" class="headerlink" title="访问网址"></a>访问网址</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ergouzi.github.io</span><br></pre></td></tr></table></figure>
-
-<h3 id="设置图片引用"><a href="#设置图片引用" class="headerlink" title="设置图片引用"></a>设置图片引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置 创建新的博客后会生成同名文件夹</span><br><span class="line">post_asset_folder: true</span><br><span class="line"># 下载插件</span><br><span class="line">npm install https:&#x2F;&#x2F;github.com&#x2F;7ym0n&#x2F;hexo-asset-image --sa</span><br><span class="line"># 图片引用格式</span><br><span class="line">![xxx](xxx&#x2F;xxx.png)</span><br></pre></td></tr></table></figure>
-
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置 改为中文</span><br><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="另："><a href="#另：" class="headerlink" title="另："></a>另：</h2><p>​       本文未能细致到傻瓜式操作的程度，有些细节还是要参考其他文章.</p>
-<p><strong>教程参考:</strong></p>
-<p>​                <a target="_blank" rel="noopener" href="https://suyin-blog.club/2020/323EH2Y/">https://suyin-blog.club/2020/323EH2Y/</a></p>
-<p>​                <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">https://zhuanlan.zhihu.com/p/26625249</a></p>
-<p>​                <a target="_blank" rel="noopener" href="https://blog.csdn.net/science_Lee/article/details/84633237">https://blog.csdn.net/science_Lee/article/details/84633237</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/30/CentOS7%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="今日">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="走">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/30/CentOS7%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">CentOS7初始化及基本操作</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-11-30 11:04:58" itemprop="dateCreated datePublished" datetime="2020-11-30T11:04:58+08:00">2020-11-30</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-10 11:03:20" itemprop="dateModified" datetime="2020-12-10T11:03:20+08:00">2020-12-10</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="改为静态IP"><a href="#改为静态IP" class="headerlink" title="改为静态IP"></a>改为静态IP</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 编辑网卡配置文件</span><br><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 修改相关配置</span><br><span class="line">BOOTPROTO&#x3D;&quot;static&quot; #dhcp改为static </span><br><span class="line">ONBOOT&#x3D;&quot;yes&quot; #开机启用本配置</span><br><span class="line">IPADDR&#x3D;192.168.7.106 #静态IP</span><br><span class="line">GATEWAY&#x3D;192.168.7.1 #默认网关</span><br><span class="line">NETMASK&#x3D;255.255.255.0 #子网掩码</span><br><span class="line">DNS1&#x3D;192.168.7.1 #DNS 配置</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 重启网络服务</span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查看IP</span><br><span class="line">ip addr</span><br></pre></td></tr></table></figure>
-
-<h2 id="yum安装wget"><a href="#yum安装wget" class="headerlink" title="yum安装wget"></a>yum安装wget</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="更改yum镜像源"><a href="#更改yum镜像源" class="headerlink" title="更改yum镜像源"></a>更改yum镜像源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 备份原来的配置</span><br><span class="line">mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup</span><br><span class="line"># 下载ailiyun的yum源配置文件到&#x2F;etc&#x2F;yum.repos.d&#x2F;</span><br><span class="line">wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-7.repo</span><br><span class="line"># 运行yum makecache生成缓存</span><br><span class="line">yum makecache</span><br><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
-
-
 
 
       
