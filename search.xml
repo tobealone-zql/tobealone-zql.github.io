@@ -184,6 +184,22 @@
       </tags>
   </entry>
   <entry>
+    <title>maven依赖手动导入</title>
+    <url>/2020/05/20/Maven%E4%BE%9D%E8%B5%96%E6%89%8B%E5%8A%A8%E5%AF%BC%E5%85%A5/</url>
+    <content><![CDATA[<h4 id="1-到https-mvnrepository-com-下载jar包"><a href="#1-到https-mvnrepository-com-下载jar包" class="headerlink" title="1. 到https://mvnrepository.com/下载jar包"></a>1. 到<a href="https://mvnrepository.com/%E4%B8%8B%E8%BD%BDjar%E5%8C%85">https://mvnrepository.com/下载jar包</a></h4><h4 id="2-修改导入命令"><a href="#2-修改导入命令" class="headerlink" title="2. 修改导入命令"></a>2. 修改导入命令</h4><p><img src="/2020/05/20/Maven%E4%BE%9D%E8%B5%96%E6%89%8B%E5%8A%A8%E5%AF%BC%E5%85%A5/%E5%8F%82%E6%95%B0%E5%AF%B9%E7%85%A7.png"></p>
+<p><img src="/2020/05/20/Maven%E4%BE%9D%E8%B5%96%E6%89%8B%E5%8A%A8%E5%AF%BC%E5%85%A5/jar%E5%8C%85%E5%AD%98%E6%94%BE%E4%BD%8D%E7%BD%AE.png"></p>
+<p>F:\spring-boot-admin-starter-client-2.2.3.jar 是你下载后存放的jar包位置</p>
+<h4 id="3-最终命令"><a href="#3-最终命令" class="headerlink" title="3. 最终命令"></a>3. 最终命令</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mvn install:install-file -DgroupId&#x3D;de.codecentric -DartifactId&#x3D;spring-boot-admin-starter-client -Dversion&#x3D;2.2.3 -Dpackaging&#x3D;jar -Dfile&#x3D;F:\spring-boot-admin-starter-client-2.2.3.jar</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mvn install:install-file -DgroupId&#x3D;mysql -DartifactId&#x3D;mysql-connector-java -Dversion&#x3D;5.1.22 -Dpackaging&#x3D;jar -Dfile&#x3D;E:\mysql-connector-java-5.1.22.jar</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>Mysql基本操作</title>
     <url>/2020/12/02/Mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h4 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set password for root@localhost &#x3D; password(&quot;123456&quot;); </span><br></pre></td></tr></table></figure>
@@ -254,7 +270,7 @@
 <ol start="2">
 <li>JDK配置</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">取消Install automatically</span><br><span class="line">JDK别名：jdk</span><br><span class="line"># 找上面步骤查到的JDK路径</span><br><span class="line">JAVA_HOME：&#x2F;opt&#x2F;java&#x2F;openjdk&#x2F;opt&#x2F;java&#x2F;openjdk</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">取消Install automatically</span><br><span class="line">JDK别名：jdk</span><br><span class="line"># 找上面步骤查到的JDK路径</span><br><span class="line">JAVA_HOME：&#x2F;opt&#x2F;java&#x2F;openjdk</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>MAVEN安装(与上面不同)</li>
@@ -262,7 +278,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">NAME：maven</span><br><span class="line">MAVEN_HOME：&#x2F;usr&#x2F;share&#x2F;java&#x2F;maven-3</span><br></pre></td></tr></table></figure>
 
 <h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><ol>
-<li><p>安装Subversion Plug-in</p>
+<li><p>安装Subversion Plugin</p>
 </li>
 <li><p>安装Maven Integration plugin</p>
 </li>
