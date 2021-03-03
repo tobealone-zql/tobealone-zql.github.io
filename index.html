@@ -254,246 +254,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="今日">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="走">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">OpenWrt主路由基本设置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-02-13 11:36:00" itemprop="dateCreated datePublished" datetime="2021-02-13T11:36:00+08:00">2021-02-13</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-02 14:46:51" itemprop="dateModified" datetime="2021-03-02T14:46:51+08:00">2021-03-02</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <a id="more"></a>
-
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li>本教程基于eSir的 OpenWrt R21.1.18 GDQ v2.1[2021]版本</li>
-</ul>
-<h2 id="预实现功能（暂作记录，未能实现）"><a href="#预实现功能（暂作记录，未能实现）" class="headerlink" title="预实现功能（暂作记录，未能实现）"></a>预实现功能（暂作记录，未能实现）</h2><ul>
-<li><p>拨号</p>
-</li>
-<li><p>科学上网</p>
-</li>
-<li><p>负载均衡</p>
-</li>
-<li><p>通过动态DNS插件解析OpenWrt主机所分配的IPV6，绑定域名。实现外网访问OpenWrt后台</p>
-</li>
-<li><p>通过动态DNS插件解析网内主机所分配的IPV6，绑定域名。实现外网控制电脑主机</p>
-</li>
-</ul>
-<h2 id="网络拓扑图"><a href="#网络拓扑图" class="headerlink" title="网络拓扑图"></a>网络拓扑图</h2><p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213184305307.png" alt="image-20210213184305307"></p>
-<h2 id="拨号，并对接口进行基本配置（以下每个页面修改完都要点击保存应用，等到最后再点击，前面修改的配置就没了）"><a href="#拨号，并对接口进行基本配置（以下每个页面修改完都要点击保存应用，等到最后再点击，前面修改的配置就没了）" class="headerlink" title="拨号，并对接口进行基本配置（以下每个页面修改完都要点击保存应用，等到最后再点击，前面修改的配置就没了）"></a>拨号，并对接口进行基本配置（以下每个页面修改完都要点击保存应用，等到最后再点击，前面修改的配置就没了）</h2><ol>
-<li><p>点击 左侧导航栏 网络 - 接口，删除除了LAN口和WAN口之外的接口</p>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213201625528.png" alt="image-20210213201625528"></p>
-</li>
-<li><p>点击WAN口修改按钮</p>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213201745239.png" alt="image-20210213201745239"></p>
-</li>
-<li><p>WAN口：基本配置改为如下设置，PAP/CHAP 用户名，密码改为自己的宽带账号密码</p>
-</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213202231140.png" alt="image-20210213202231140"></p>
-<ol start="4">
-<li><p>WAN口：高级设置改为如下设置</p>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213202438292.png" alt="image-20210213202438292"></p>
-</li>
-<li><p>WAN口：物理设置改为如下设置，因为我的连接光猫的网线是连接在软路由的eth0口的。</p>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213202803464.png" alt="image-20210213202803464"></p>
-</li>
-<li><p>WAN口：防火墙设置改为如下设置</p>
-</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213202945238.png" alt="image-20210213202945238"></p>
-<ol start="7">
-<li>点击保存&amp;应用。并返回接口页面</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213203140282.png" alt="image-20210213203140282"></p>
-<ol start="8">
-<li>点击LAN口修改按钮</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213203304066.png" alt="image-20210213203304066"></p>
-<ol start="9">
-<li>LAN口：基本设置，以及DHCP 服务器基本设置改为如下</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213203732334.png" alt="image-20210213203732334"></p>
-<ol start="10">
-<li>LAN口：DHCP 服务器高级设置改为如下</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213203558722.png" alt="image-20210213203558722"></p>
-<ol start="11">
-<li>LAN口：DHCP 服务器IPV6设置改为如下</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213203857231.png" alt="image-20210213203857231"></p>
-<ol start="12">
-<li>LAN口：高级配置改为如下</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213204015391.png" alt="image-20210213204015391"></p>
-<ol start="13">
-<li>LAN口：物理设置改为如下</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213204103729.png" alt="image-20210213204103729"></p>
-<ol start="14">
-<li>LAN口：防火墙设置改为如下</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213204218445.png" alt="image-20210213204218445"></p>
-<ol start="15">
-<li>点击保存&amp; 应用，并点击接口，返回接口管理界面，查看信息</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213204429554.png" alt="image-20210213204429554"></p>
-<h2 id="科学上网"><a href="#科学上网" class="headerlink" title="科学上网"></a>科学上网</h2><ol>
-<li>点击 服务 - shadowSocksR Plus+</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213210211443.png" alt="image-20210213210211443"></p>
-<ol start="2">
-<li><p>做如下配置</p>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213210510736.png" alt="image-20210213210510736"></p>
-<ol start="3">
-<li>选一个状态好的节点，点击应用</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213210820407.png" alt="image-20210213210820407"></p>
-<ol start="4">
-<li>结果如下</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213210845470.png" alt="image-20210213210845470"></p>
-</li>
-</ol>
-<h2 id="配置负载均衡"><a href="#配置负载均衡" class="headerlink" title="配置负载均衡"></a>配置负载均衡</h2><ol>
-<li>点击 网络 - 负载均衡</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213204546068.png" alt="image-20210213204546068"></p>
-<ol start="2">
-<li>点击修改</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213204634126.png" alt="image-20210213204634126"></p>
-<ol start="3">
-<li>点击策略，点击修改</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213204822723.png" alt="image-20210213204822723"></p>
-<ol start="4">
-<li>备用成员改为默认（使用主路由表），保存应用</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213204923549.png" alt="image-20210213204923549"></p>
-<ol start="5">
-<li>结果如下</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213205551262.png" alt="image-20210213205551262"></p>
-<ol start="6">
-<li>点击规则，点击修改</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213205054633.png" alt="image-20210213205054633"></p>
-<ol start="7">
-<li>分配的策略改为默认（使用主路由表），保存应用，返回上一级</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213205140917.png" alt="image-20210213205140917"></p>
-<ol start="8">
-<li>点击修改</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213205246760.png" alt="image-20210213205246760"></p>
-<ol start="8">
-<li>分配的策略改为默认（使用主路由表），保存应用</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213205309462.png" alt="image-20210213205309462"></p>
-<ol start="9">
-<li><p>结果如下</p>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213205411379.png" alt="image-20210213205411379"></p>
-</li>
-</ol>
-<h2 id="配置Turbo-ACC网络加速"><a href="#配置Turbo-ACC网络加速" class="headerlink" title="配置Turbo ACC网络加速"></a>配置Turbo ACC网络加速</h2><ol>
-<li>点击 网络 - Turbo ACC网络加速</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213205908299.png" alt="image-20210213205908299"></p>
-<ol start="2">
-<li>修改如下配置</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213210013806.png" alt="image-20210213210013806"></p>
-<ol start="3">
-<li>结果如下</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213210052524.png" alt="image-20210213210052524"></p>
-<h2 id="配置动态DNS，实现外网访问该系统（具体域名购买，另行百度）"><a href="#配置动态DNS，实现外网访问该系统（具体域名购买，另行百度）" class="headerlink" title="配置动态DNS，实现外网访问该系统（具体域名购买，另行百度）"></a>配置动态DNS，实现外网访问该系统（具体域名购买，另行百度）</h2><ol>
-<li>点击动态DNS插件。删除原有配置</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213211415625.png" alt="image-20210213211415625"></p>
-<ol start="2">
-<li>自定义名称，点击添加</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213211522200.png" alt="image-20210213211522200"></p>
-<ol start="2">
-<li>基本配置如下</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213211954679.png" alt="image-20210213211954679"></p>
-<ol start="3">
-<li>高级设置如下</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213212137577.png" alt="image-20210213212137577"></p>
-<ol start="4">
-<li>保存应用。点击启动</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213212225740.png" alt="image-20210213212225740"></p>
-<ol start="5">
-<li>结果如下</li>
-</ol>
-<p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213212304485.png" alt="image-20210213212304485"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE%20-%20%E5%89%AF%E6%9C%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -543,6 +303,84 @@
 <li>还没有实现OpenWrt的动态DDNS插件解析电脑主机的IPV6</li>
 </ol>
 
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="今日">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="走">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">OpenWrt主路由基本设置</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-13 11:36:00" itemprop="dateCreated datePublished" datetime="2021-02-13T11:36:00+08:00">2021-02-13</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-03-03 17:55:18" itemprop="dateModified" datetime="2021-03-03T17:55:18+08:00">2021-03-03</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>暂无说明</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
