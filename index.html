@@ -285,7 +285,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-03 17:55:18" itemprop="dateModified" datetime="2021-03-03T17:55:18+08:00">2021-03-03</time>
+        <time title="修改时间：2021-03-04 10:42:35" itemprop="dateModified" datetime="2021-03-04T10:42:35+08:00">2021-03-04</time>
       </span>
 
   
@@ -363,7 +363,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-04 09:41:44" itemprop="dateModified" datetime="2020-12-04T09:41:44+08:00">2020-12-04</time>
+        <time title="修改时间：2021-03-04 10:40:37" itemprop="dateModified" datetime="2021-03-04T10:40:37+08:00">2021-03-04</time>
       </span>
 
   
@@ -376,50 +376,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <a id="more"></a>
-
-<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ul>
-<li><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a>安装</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>安装</p>
-</li>
-<li><p>实例GitHub号</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用户名：ergouzi</span><br><span class="line">账号(注册邮箱): 55252662@qq.com</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line"># 选择一个安装位置进行初始化安装  myhexo为生成的hexo文件夹名称</span><br><span class="line">hexo init myhexo</span><br><span class="line">cd myhexo</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<h3 id="Next安装"><a href="#Next安装" class="headerlink" title="Next安装"></a>Next安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd myhexo&#x2F;</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;next-theme&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用Next主题"><a href="#使用Next主题" class="headerlink" title="使用Next主题"></a>使用Next主题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置GitHub"><a href="#配置GitHub" class="headerlink" title="配置GitHub"></a>配置GitHub</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1&gt; 创建GitHub账号</span><br><span class="line">2&gt; 创建GitHub仓库，仓库命名格式固定,不可修改，格式为：GitHub用户名.github.io   例：ergouzi.github.io</span><br></pre></td></tr></table></figure>
-
-<h3 id="Git生成密钥-绑定GitHub"><a href="#Git生成密钥-绑定GitHub" class="headerlink" title="Git生成密钥 绑定GitHub"></a>Git生成密钥 绑定GitHub</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;   </span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br><span class="line"># 生成ssh密钥文件</span><br><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</span><br><span class="line"># 打开GitHub_Settings_keys页面[https:&#x2F;&#x2F;link.zhihu.com&#x2F;?target&#x3D;https%3A&#x2F;&#x2F;github.com&#x2F;settings&#x2F;keys] ，新建new SSH Key</span><br></pre></td></tr></table></figure>
-
-<h3 id="保存站点信息"><a href="#保存站点信息" class="headerlink" title="保存站点信息"></a>保存站点信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置</span><br><span class="line">deploy: </span><br><span class="line">  type: &#39;git&#39;</span><br><span class="line">  repo: git@github.com:ergouzi&#x2F;ergouzi.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="安装部署插件"><a href="#安装部署插件" class="headerlink" title="安装部署插件"></a>安装部署插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="访问网址"><a href="#访问网址" class="headerlink" title="访问网址"></a>访问网址</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ergouzi.github.io</span><br></pre></td></tr></table></figure>
-
-<h3 id="设置图片引用"><a href="#设置图片引用" class="headerlink" title="设置图片引用"></a>设置图片引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置 创建新的博客后会生成同名文件夹</span><br><span class="line">post_asset_folder: true</span><br><span class="line"># 下载插件</span><br><span class="line">npm install https:&#x2F;&#x2F;github.com&#x2F;7ym0n&#x2F;hexo-asset-image --sa</span><br><span class="line"># 图片引用格式</span><br><span class="line">![xxx](xxx&#x2F;xxx.png)</span><br></pre></td></tr></table></figure>
-
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改myhexo目录下_config.yml配置 改为中文</span><br><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="另："><a href="#另：" class="headerlink" title="另："></a>另：</h2><p>​       本文未能细致到傻瓜式操作的程度，有些细节还是要参考其他文章.</p>
-<p><strong>教程参考:</strong></p>
-<p>​                <a target="_blank" rel="noopener" href="https://suyin-blog.club/2020/323EH2Y/">https://suyin-blog.club/2020/323EH2Y/</a></p>
-<p>​                <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">https://zhuanlan.zhihu.com/p/26625249</a></p>
-<p>​                <a target="_blank" rel="noopener" href="https://blog.csdn.net/science_Lee/article/details/84633237">https://blog.csdn.net/science_Lee/article/details/84633237</a></p>
-
+          <p>暂无说明</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/14/Hexo%E5%88%9D%E5%A7%8B%E5%8C%96/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -476,7 +441,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-10 11:03:20" itemprop="dateModified" datetime="2020-12-10T11:03:20+08:00">2020-12-10</time>
+        <time title="修改时间：2021-03-04 10:41:22" itemprop="dateModified" datetime="2021-03-04T10:41:22+08:00">2021-03-04</time>
       </span>
 
   
@@ -489,23 +454,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="改为静态IP"><a href="#改为静态IP" class="headerlink" title="改为静态IP"></a>改为静态IP</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 编辑网卡配置文件</span><br><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 修改相关配置</span><br><span class="line">BOOTPROTO&#x3D;&quot;static&quot; #dhcp改为static </span><br><span class="line">ONBOOT&#x3D;&quot;yes&quot; #开机启用本配置</span><br><span class="line">IPADDR&#x3D;192.168.7.106 #静态IP</span><br><span class="line">GATEWAY&#x3D;192.168.7.1 #默认网关</span><br><span class="line">NETMASK&#x3D;255.255.255.0 #子网掩码</span><br><span class="line">DNS1&#x3D;192.168.7.1 #DNS 配置</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 重启网络服务</span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查看IP</span><br><span class="line">ip addr</span><br></pre></td></tr></table></figure>
-
-<h2 id="yum安装wget"><a href="#yum安装wget" class="headerlink" title="yum安装wget"></a>yum安装wget</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="更改yum镜像源"><a href="#更改yum镜像源" class="headerlink" title="更改yum镜像源"></a>更改yum镜像源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 备份原来的配置</span><br><span class="line">mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup</span><br><span class="line"># 下载ailiyun的yum源配置文件到&#x2F;etc&#x2F;yum.repos.d&#x2F;</span><br><span class="line">wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-7.repo</span><br><span class="line"># 运行yum makecache生成缓存</span><br><span class="line">yum makecache</span><br><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
-
-
-
-
+          <p>暂无说明</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/14/CentOS7%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -554,10 +511,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2020-12-09 11:01:51 / 修改时间：11:05:00" itemprop="dateCreated datePublished" datetime="2020-12-09T11:01:51+08:00">2020-12-09</time>
+      <time title="创建时间：2020-12-09 11:01:51" itemprop="dateCreated datePublished" datetime="2020-12-09T11:01:51+08:00">2020-12-09</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-03-04 10:42:22" itemprop="dateModified" datetime="2021-03-04T10:42:22+08:00">2021-03-04</time>
+      </span>
 
   
 </div>
@@ -569,10 +532,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p>造成死锁原因：线程Add拿到线程Del所需B锁 线程Del拿到线程Add所需A锁 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">public class Test03  &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    private static Object lockA &#x3D; new Object();</span><br><span class="line">    private static Object lockB &#x3D; new Object();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static class  Add extends Thread &#123;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line">            synchronized(lockA) &#123;</span><br><span class="line"></span><br><span class="line">                System.err.println(&quot;add获取A锁&quot;);</span><br><span class="line">                try &#123;</span><br><span class="line">                    Thread.sleep(5000);</span><br><span class="line">                &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                synchronized(lockB) &#123;</span><br><span class="line"></span><br><span class="line">                    System.err.println(&quot;add获取B锁&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static class Del extends Thread  &#123;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line"></span><br><span class="line">            synchronized(lockB) &#123;</span><br><span class="line"></span><br><span class="line">                System.err.println(&quot;del获取B锁&quot;);</span><br><span class="line">                synchronized(lockA) &#123;</span><br><span class="line"></span><br><span class="line">                    System.err.println(&quot;del获取A锁&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        Add add &#x3D; new Add();</span><br><span class="line">        add.start();</span><br><span class="line"></span><br><span class="line">        Del del &#x3D; new Del();</span><br><span class="line">        del.start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+          <p>暂无说明</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/09/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%88%9D%E8%AF%86/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -621,10 +589,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2020-12-04 15:53:42 / 修改时间：16:40:16" itemprop="dateCreated datePublished" datetime="2020-12-04T15:53:42+08:00">2020-12-04</time>
+      <time title="创建时间：2020-12-04 15:53:42" itemprop="dateCreated datePublished" datetime="2020-12-04T15:53:42+08:00">2020-12-04</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-03-04 10:42:16" itemprop="dateModified" datetime="2021-03-04T10:42:16+08:00">2021-03-04</time>
+      </span>
 
   
 </div>
@@ -636,11 +610,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h4 id="线程状态类型"><a href="#线程状态类型" class="headerlink" title="线程状态类型"></a>线程状态类型</h4><ul>
-<li>NEW：线程已经创建，待启动</li>
-<li>RUNNABLE：</li>
-</ul>
-
+          <p>暂无说明</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/04/%E8%AF%BB%E3%80%8AJava%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97%E3%80%8B%E6%9C%89%E6%84%9F--%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -689,10 +667,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2020-12-04 15:46:07 / 修改时间：15:55:20" itemprop="dateCreated datePublished" datetime="2020-12-04T15:46:07+08:00">2020-12-04</time>
+      <time title="创建时间：2020-12-04 15:46:07" itemprop="dateCreated datePublished" datetime="2020-12-04T15:46:07+08:00">2020-12-04</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-03-04 10:42:11" itemprop="dateModified" datetime="2021-03-04T10:42:11+08:00">2021-03-04</time>
+      </span>
 
   
 </div>
@@ -704,7 +688,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          
+          <p>暂无说明</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/04/%E5%BF%AB%E4%BD%8F%E8%84%91%EF%BC%8C%E8%B7%9F%E6%88%91%E5%8A%A8-Mysql%E4%BC%98%E5%8C%96/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -761,7 +753,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-04 09:49:58" itemprop="dateModified" datetime="2020-12-04T09:49:58+08:00">2020-12-04</time>
+        <time title="修改时间：2021-03-04 10:40:57" itemprop="dateModified" datetime="2021-03-04T10:40:57+08:00">2021-03-04</time>
       </span>
 
   
@@ -774,18 +766,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h4 id="拉取镜像"><a href="#拉取镜像" class="headerlink" title="拉取镜像"></a>拉取镜像</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis</span><br></pre></td></tr></table></figure>
-
-<h4 id="新建data和conf两个文件夹"><a href="#新建data和conf两个文件夹" class="headerlink" title="新建data和conf两个文件夹"></a>新建<code>data</code>和<code>conf</code>两个文件夹</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p &#x2F;home&#x2F;docker_data&#x2F;redis&#x2F;data</span><br><span class="line">mkdir -p &#x2F;home&#x2F;docker_data&#x2F;redis&#x2F;conf</span><br></pre></td></tr></table></figure>
-
-<h4 id="增加配置文件-redis-conf"><a href="#增加配置文件-redis-conf" class="headerlink" title="增加配置文件 redis.conf"></a>增加配置文件 <code>redis.conf</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 在刚才新建的redis&#x2F;conf中新建文件redis.conf 内容如下：</span><br><span class="line">#bind 127.0.0.1 </span><br><span class="line">protected-mode no </span><br><span class="line">appendonly yes </span><br></pre></td></tr></table></figure>
-
-<h4 id="创建redis容器并启动"><a href="#创建redis容器并启动" class="headerlink" title="创建redis容器并启动"></a>创建<code>redis</code>容器并启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name redis -p 13913:6379 --privileged&#x3D;true  -v &#x2F;home&#x2F;docker_data&#x2F;redis&#x2F;data:&#x2F;data -v &#x2F;home&#x2F;docker_data&#x2F;redis&#x2F;conf&#x2F;redis.conf:&#x2F;etc&#x2F;redis&#x2F;redis.conf -d redis redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf</span><br></pre></td></tr></table></figure>
-
-<h4 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010358168/article/details/97143703">https://blog.csdn.net/u010358168/article/details/97143703</a></li>
-</ul>
-
+          <p>暂无说明</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/03/Docker%E5%AE%89%E8%A3%85Redis/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -842,7 +831,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-04 09:43:12" itemprop="dateModified" datetime="2020-12-04T09:43:12+08:00">2020-12-04</time>
+        <time title="修改时间：2021-03-04 10:41:51" itemprop="dateModified" datetime="2021-03-04T10:41:51+08:00">2021-03-04</time>
       </span>
 
   
@@ -855,9 +844,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h4 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set password for root@localhost &#x3D; password(&quot;123456&quot;); </span><br></pre></td></tr></table></figure>
-
-
+          <p>暂无说明</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/02/Mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -914,7 +909,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-04 09:42:58" itemprop="dateModified" datetime="2020-12-04T09:42:58+08:00">2020-12-04</time>
+        <time title="修改时间：2021-03-04 10:42:03" itemprop="dateModified" datetime="2021-03-04T10:42:03+08:00">2021-03-04</time>
       </span>
 
   
@@ -927,9 +922,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h4 id="手动安装jar包"><a href="#手动安装jar包" class="headerlink" title="手动安装jar包"></a>手动安装jar包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -DgroupId&#x3D;de.codecentric -DartifactId&#x3D;spring-boot-admin-starter-client -Dversion&#x3D;2.3.0 -Dpackaging&#x3D;jar -Dfile&#x3D;E:\spring-boot-admin-starter-client-2.3.0.jar</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
+          <p>暂无说明</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/01/Maven%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -986,7 +987,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-04 09:41:30" itemprop="dateModified" datetime="2020-12-04T09:41:30+08:00">2020-12-04</time>
+        <time title="修改时间：2021-03-04 10:40:45" itemprop="dateModified" datetime="2021-03-04T10:40:45+08:00">2021-03-04</time>
       </span>
 
   
@@ -999,7 +1000,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h4 id="git-pull-push每次都需要输入密码问题"><a href="#git-pull-push每次都需要输入密码问题" class="headerlink" title="git pull/push每次都需要输入密码问题"></a>git pull/push每次都需要输入密码问题</h4>
+          <p>暂无说明</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/11/30/Git%E6%93%8D%E4%BD%9C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
