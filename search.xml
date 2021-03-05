@@ -17,24 +17,24 @@
       </tags>
   </entry>
   <entry>
-    <title>6-04-Ribbon组成</title>
-    <url>/2020/05/07/6-04-Ribbon%E7%BB%84%E6%88%90/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<p><img src="/2020/05/07/6-04-Ribbon%E7%BB%84%E6%88%90/image-20210303223737785.png" alt="image-20210303223737785"></p>
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>6-05-配置负载均衡规则</title>
     <url>/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
 <h2 id="规则类型"><a href="#规则类型" class="headerlink" title="规则类型"></a>规则类型</h2><p><img src="/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/image-20210303224123478.png" alt="image-20210303224123478"></p>
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>6-04-Ribbon组成</title>
+    <url>/2020/05/07/6-04-Ribbon%E7%BB%84%E6%88%90/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<p><img src="/2020/05/07/6-04-Ribbon%E7%BB%84%E6%88%90/image-20210303223737785.png" alt="image-20210303223737785"></p>
 ]]></content>
       <tags>
         <tag>Spring Cloud alibaba 基础学习</tag>
@@ -125,10 +125,41 @@
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
+<h2 id="1-配置Nacos，修改服务提供者权重"><a href="#1-配置Nacos，修改服务提供者权重" class="headerlink" title="1. 配置Nacos，修改服务提供者权重"></a>1. 配置Nacos，修改服务提供者权重</h2><p><img src="/2020/05/07/6-14-%E6%89%A9%E5%B1%95Ribbon-%E6%94%AF%E6%8C%81Nacos%E6%9D%83%E9%87%8D/image-20210304222731686.png" alt="image-20210304222731686"></p>
+<p><img src="/2020/05/07/6-14-%E6%89%A9%E5%B1%95Ribbon-%E6%94%AF%E6%8C%81Nacos%E6%9D%83%E9%87%8D/image-20210304222848469.png" alt="image-20210304222848469"></p>
+<p><img src="/2020/05/07/6-14-%E6%89%A9%E5%B1%95Ribbon-%E6%94%AF%E6%8C%81Nacos%E6%9D%83%E9%87%8D/image-20210304223135691.png" alt="image-20210304223135691"></p>
+<h2 id="2-创建Nacos权重配置类"><a href="#2-创建Nacos权重配置类" class="headerlink" title="2. 创建Nacos权重配置类"></a>2. 创建Nacos权重配置类</h2><p><img src="/2020/05/07/6-14-%E6%89%A9%E5%B1%95Ribbon-%E6%94%AF%E6%8C%81Nacos%E6%9D%83%E9%87%8D/image-20210304223319049.png" alt="image-20210304223319049"></p>
+<h2 id="3-修改RibbonConfiguration文件"><a href="#3-修改RibbonConfiguration文件" class="headerlink" title="3. 修改RibbonConfiguration文件"></a>3. 修改RibbonConfiguration文件</h2><p><img src="/2020/05/07/6-14-%E6%89%A9%E5%B1%95Ribbon-%E6%94%AF%E6%8C%81Nacos%E6%9D%83%E9%87%8D/image-20210304223414495.png" alt="image-20210304223414495"></p>
+<h2 id="4-调用测试，9012端口被更多次调用"><a href="#4-调用测试，9012端口被更多次调用" class="headerlink" title="4.调用测试，9012端口被更多次调用"></a>4.调用测试，9012端口被更多次调用</h2><p><img src="/2020/05/07/6-14-%E6%89%A9%E5%B1%95Ribbon-%E6%94%AF%E6%8C%81Nacos%E6%9D%83%E9%87%8D/image-20210304223701238.png" alt="image-20210304223701238"></p>
+<p><img src="/2020/05/07/6-14-%E6%89%A9%E5%B1%95Ribbon-%E6%94%AF%E6%8C%81Nacos%E6%9D%83%E9%87%8D/image-20210304223720828.png" alt="image-20210304223720828"></p>
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>6-15-扩展Ribbon-同一集群优先调用</title>
+    <url>/2020/05/07/6-15-%E6%89%A9%E5%B1%95Ribbon-%E5%90%8C%E4%B8%80%E9%9B%86%E7%BE%A4%E4%BC%98%E5%85%88%E8%B0%83%E7%94%A8/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
 
+<h2 id="1-文件目录"><a href="#1-文件目录" class="headerlink" title="1. 文件目录"></a>1. 文件目录</h2><p><img src="/2020/05/07/6-15-%E6%89%A9%E5%B1%95Ribbon-%E5%90%8C%E4%B8%80%E9%9B%86%E7%BE%A4%E4%BC%98%E5%85%88%E8%B0%83%E7%94%A8/image-20210304232152791.png" alt="image-20210304232152791"></p>
+<h2 id="2-添加配置文件NacosSameClusterWeightedRule"><a href="#2-添加配置文件NacosSameClusterWeightedRule" class="headerlink" title="2. 添加配置文件NacosSameClusterWeightedRule"></a>2. 添加配置文件NacosSameClusterWeightedRule</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zql.contentCenter.configuration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.nacos.api.exception.NacosException;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.nacos.api.naming.NamingService;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.nacos.api.naming.pojo.Instance;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.nacos.client.naming.core.Balancer;</span><br><span class="line"><span class="keyword">import</span> com.netflix.client.config.IClientConfig;</span><br><span class="line"><span class="keyword">import</span> com.netflix.loadbalancer.AbstractLoadBalancerRule;</span><br><span class="line"><span class="keyword">import</span> com.netflix.loadbalancer.BaseLoadBalancer;</span><br><span class="line"><span class="keyword">import</span> com.netflix.loadbalancer.Server;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.alibaba.nacos.NacosDiscoveryProperties;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.alibaba.nacos.ribbon.NacosServer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.CollectionUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Collectors;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NacosSameClusterWeightedRule</span> <span class="keyword">extends</span> <span class="title">AbstractLoadBalancerRule</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> NacosDiscoveryProperties nacosDiscoveryProperties;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initWithNiwsConfig</span><span class="params">(IClientConfig iClientConfig)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Server <span class="title">choose</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//1. 找到指定服务的所有实例 A</span></span><br><span class="line">        <span class="comment">//2. 过滤出相同集群下的所有实例 B</span></span><br><span class="line">        <span class="comment">//3. 如果B是空，就用A</span></span><br><span class="line">        <span class="comment">//4. 基于权重的负载均衡</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//拿到配置文件中集群名称</span></span><br><span class="line">            String clusterName = nacosDiscoveryProperties.getClusterName();</span><br><span class="line">            BaseLoadBalancer loadBalancer = (BaseLoadBalancer) <span class="keyword">this</span>.getLoadBalancer();</span><br><span class="line">            <span class="comment">//想要请求的微服务的名称</span></span><br><span class="line">            String name = loadBalancer.getName();</span><br><span class="line">            <span class="comment">//拿到服务发现的相关API</span></span><br><span class="line">            NamingService namingService = nacosDiscoveryProperties.namingServiceInstance();</span><br><span class="line">            <span class="comment">// 1. 找到指定服务的所有实例 A</span></span><br><span class="line">            List&lt;Instance&gt; instances = namingService.selectInstances(name, <span class="keyword">true</span>);</span><br><span class="line">            <span class="comment">// 2. 过滤出相同集群下的所有实例 B</span></span><br><span class="line">            List&lt;Instance&gt; sameClusterInstances = instances.stream().filter(instance -&gt; Objects.equals(instance.getClusterName(), clusterName)).collect(Collectors.toList());</span><br><span class="line">            <span class="comment">// 3. 如果B是空，就用A</span></span><br><span class="line">            List&lt;Instance&gt; instancesToBeChosen = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            <span class="keyword">if</span> (CollectionUtils.isEmpty(sameClusterInstances)) &#123;</span><br><span class="line">                instancesToBeChosen = instances;</span><br><span class="line">                log.warn(<span class="string">&quot;发生跨集群的调用, name = &#123;&#125;, clusterName = &#123;&#125;, instances = &#123;&#125;&quot;</span>, name, clusterName, instances);</span><br><span class="line"></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                instancesToBeChosen = sameClusterInstances;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 4. 基于权重的负载均衡算法，返回1个实例</span></span><br><span class="line">            Instance instance = ExtendBalancer.getHostByRandomWeight2(instancesToBeChosen);</span><br><span class="line">            log.info(<span class="string">&quot;选择的实例是 port = &#123;&#125;, instance = &#123;&#125;&quot;</span>, instance.getPort(), instance);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> NacosServer(instance);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NacosException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExtendBalancer</span> <span class="keyword">extends</span> <span class="title">Balancer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Instance <span class="title">getHostByRandomWeight2</span><span class="params">(List&lt;Instance&gt; hosts)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getHostByRandomWeight(hosts);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3. 修改配置文件"></a>3. 修改配置文件</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> ribbonconfiguration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.netflix.loadbalancer.IRule;</span><br><span class="line"><span class="keyword">import</span> com.netflix.loadbalancer.RandomRule;</span><br><span class="line"><span class="keyword">import</span> com.zql.contentCenter.configuration.NacosSameClusterWeightedRule;</span><br><span class="line"><span class="keyword">import</span> com.zql.contentCenter.configuration.NacosWeightedRule;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RibbonConfiguration</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> IRule <span class="title">ribbonRule</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//return new RandomRule();</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> NacosSameClusterWeightedRule();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h2 id="4-修改content-center-项目application-yml文件，更改cluster-name，启动项目"><a href="#4-修改content-center-项目application-yml文件，更改cluster-name，启动项目" class="headerlink" title="4. 修改content-center 项目application.yml文件，更改cluster-name，启动项目"></a>4. 修改content-center 项目application.yml文件，更改cluster-name，启动项目</h2><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://haike.myds.me:13911/content_center</span></span><br><span class="line">    <span class="attr">hikari:</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">root</span></span><br><span class="line">      <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">nacos:</span></span><br><span class="line">      <span class="attr">discovery:</span></span><br><span class="line">        <span class="attr">server-addr:</span> <span class="string">haike.myds.me:13916</span></span><br><span class="line">        <span class="comment"># 修改为NJ</span></span><br><span class="line">        <span class="attr">cluster-name:</span> <span class="string">NJ</span></span><br><span class="line">        <span class="attr">namespace:</span> <span class="string">46a69d7c-b8e4-4fa2-b906-a4cc49362120</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">content-center</span></span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">9020</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#user-center:</span></span><br><span class="line"><span class="comment">#  ribbon:</span></span><br><span class="line"><span class="comment">#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h2 id="5-修改user-center-项目application-yml文件，更改cluster-name，更改端口，启动项目"><a href="#5-修改user-center-项目application-yml文件，更改cluster-name，更改端口，启动项目" class="headerlink" title="5. 修改user-center 项目application.yml文件，更改cluster-name，更改端口，启动项目"></a>5. 修改user-center 项目application.yml文件，更改cluster-name，更改端口，启动项目</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;haike.myds.me:13911&#x2F;user_center</span><br><span class="line">    hikari:</span><br><span class="line">      username: root</span><br><span class="line">      password: root</span><br><span class="line">      driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: haike.myds.me:13916</span><br><span class="line">        cluster-name: NJ</span><br><span class="line">        namespace: 46a69d7c-b8e4-4fa2-b906-a4cc49362120</span><br><span class="line">  application:</span><br><span class="line">    name: user-center</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 9010</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-修改user-center-项目application-yml文件，-更改cluster-name，更改端口，启动项目"><a href="#6-修改user-center-项目application-yml文件，-更改cluster-name，更改端口，启动项目" class="headerlink" title="6. 修改user-center 项目application.yml文件，,更改cluster-name，更改端口，启动项目"></a>6. 修改user-center 项目application.yml文件，,更改cluster-name，更改端口，启动项目</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;haike.myds.me:13911&#x2F;user_center</span><br><span class="line">    hikari:</span><br><span class="line">      username: root</span><br><span class="line">      password: root</span><br><span class="line">      driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: haike.myds.me:13916</span><br><span class="line">        cluster-name: BJ</span><br><span class="line">        namespace: 46a69d7c-b8e4-4fa2-b906-a4cc49362120</span><br><span class="line">  application:</span><br><span class="line">    name: user-center</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 9011</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-调用结果"><a href="#6-调用结果" class="headerlink" title="6. 调用结果"></a>6. 调用结果</h2><ul>
+<li>NJ集群和BJ集群都正常，优先调用NJ机房</li>
+</ul>
+<p><img src="/2020/05/07/6-15-%E6%89%A9%E5%B1%95Ribbon-%E5%90%8C%E4%B8%80%E9%9B%86%E7%BE%A4%E4%BC%98%E5%85%88%E8%B0%83%E7%94%A8/image-20210304233020695.png" alt="image-20210304233020695"></p>
+<p>NJ集群挂掉，BJ集群正常，改为调用BJ机房</p>
+<p><img src="/2020/05/07/6-15-%E6%89%A9%E5%B1%95Ribbon-%E5%90%8C%E4%B8%80%E9%9B%86%E7%BE%A4%E4%BC%98%E5%85%88%E8%B0%83%E7%94%A8/image-20210304233217802.png" alt="image-20210304233217802"></p>
 ]]></content>
       <tags>
         <tag>Spring Cloud alibaba 基础学习</tag>
@@ -150,8 +181,8 @@
       </tags>
   </entry>
   <entry>
-    <title>6-15-扩展Ribbon-同一集群优先调用</title>
-    <url>/2020/05/07/6-15-%E6%89%A9%E5%B1%95Ribbon-%E5%90%8C%E4%B8%80%E9%9B%86%E7%BE%A4%E4%BC%98%E5%85%88%E8%B0%83%E7%94%A8/</url>
+    <title>6-17-深入理解Nacos的Namespace</title>
+    <url>/2020/05/07/6-17-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Nacos%E7%9A%84Namespace/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -167,21 +198,6 @@
   <entry>
     <title>6-18-现有架构存在的问题</title>
     <url>/2020/05/07/6-18-%E7%8E%B0%E6%9C%89%E6%9E%B6%E6%9E%84%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>6-17-深入理解Nacos的Namespace</title>
-    <url>/2020/05/07/6-17-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Nacos%E7%9A%84Namespace/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
