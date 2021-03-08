@@ -25,19 +25,19 @@
   </script>
 <meta name="description" content="暂无说明">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS7初始化及基本操作">
-<meta property="og:url" content="http://example.com/2021/01/14/CentOS7%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:title" content="Mysql-基本操作">
+<meta property="og:url" content="http://example.com/2020/12/02/Mysql-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="走">
 <meta property="og:description" content="暂无说明">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-13T16:10:04.120Z">
-<meta property="article:modified_time" content="2021-03-04T02:41:22.367Z">
+<meta property="article:published_time" content="2020-12-02T03:05:14.000Z">
+<meta property="article:modified_time" content="2021-03-08T07:41:29.654Z">
 <meta property="article:author" content="今日">
-<meta property="article:tag" content="Centos">
+<meta property="article:tag" content="Mysql">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/01/14/CentOS7%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
+<link rel="canonical" href="http://example.com/2020/12/02/Mysql-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
 
 
 <script class="page-configurations">
@@ -49,7 +49,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>CentOS7初始化及基本操作 | 走</title>
+<title>Mysql-基本操作 | 走</title>
   
 
 
@@ -201,7 +201,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E4%B8%BA%E9%9D%99%E6%80%81IP"><span class="nav-number">1.</span> <span class="nav-text">改为静态IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum%E5%AE%89%E8%A3%85wget"><span class="nav-number">2.</span> <span class="nav-text">yum安装wget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9yum%E9%95%9C%E5%83%8F%E6%BA%90"><span class="nav-number">3.</span> <span class="nav-text">更改yum镜像源</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">修改密码</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -261,7 +261,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/14/CentOS7%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/02/Mysql-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -274,7 +274,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          CentOS7初始化及基本操作
+          Mysql-基本操作
         </h1>
 
         <div class="post-meta-container">
@@ -285,14 +285,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-01-14 00:10:04" itemprop="dateCreated datePublished" datetime="2021-01-14T00:10:04+08:00">2021-01-14</time>
+      <time title="创建时间：2020-12-02 11:05:14" itemprop="dateCreated datePublished" datetime="2020-12-02T11:05:14+08:00">2020-12-02</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-04 10:41:22" itemprop="dateModified" datetime="2021-03-04T10:41:22+08:00">2021-03-04</time>
+        <time title="修改时间：2021-03-08 15:41:29" itemprop="dateModified" datetime="2021-03-08T15:41:29+08:00">2021-03-08</time>
       </span>
 
   
@@ -308,21 +308,7 @@
         <p>暂无说明</p>
 <a id="more"></a>
 
-<h2 id="改为静态IP"><a href="#改为静态IP" class="headerlink" title="改为静态IP"></a>改为静态IP</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 编辑网卡配置文件</span><br><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 修改相关配置</span><br><span class="line">BOOTPROTO&#x3D;&quot;static&quot; #dhcp改为static </span><br><span class="line">ONBOOT&#x3D;&quot;yes&quot; #开机启用本配置</span><br><span class="line">IPADDR&#x3D;192.168.7.106 #静态IP</span><br><span class="line">GATEWAY&#x3D;192.168.7.1 #默认网关</span><br><span class="line">NETMASK&#x3D;255.255.255.0 #子网掩码</span><br><span class="line">DNS1&#x3D;192.168.7.1 #DNS 配置</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 重启网络服务</span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查看IP</span><br><span class="line">ip addr</span><br></pre></td></tr></table></figure>
-
-<h2 id="yum安装wget"><a href="#yum安装wget" class="headerlink" title="yum安装wget"></a>yum安装wget</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="更改yum镜像源"><a href="#更改yum镜像源" class="headerlink" title="更改yum镜像源"></a>更改yum镜像源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 备份原来的配置</span><br><span class="line">mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup</span><br><span class="line"># 下载ailiyun的yum源配置文件到&#x2F;etc&#x2F;yum.repos.d&#x2F;</span><br><span class="line">wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-7.repo</span><br><span class="line"># 运行yum makecache生成缓存</span><br><span class="line">yum makecache</span><br><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
-
-
+<h4 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set password for root@localhost &#x3D; password(&quot;123456&quot;); </span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -333,20 +319,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Centos/" rel="tag"># Centos</a>
+              <a href="/tags/Mysql/" rel="tag"># Mysql</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/12/09/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%88%9D%E8%AF%86/" rel="prev" title="多线程初识">
-                  <i class="fa fa-chevron-left"></i> 多线程初识
+                <a href="/2020/12/01/Maven%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" rel="prev" title="Maven基本使用">
+                  <i class="fa fa-chevron-left"></i> Maven基本使用
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/01/14/Hexo%E5%88%9D%E5%A7%8B%E5%8C%96/" rel="next" title="Hexo初始">
-                  Hexo初始 <i class="fa fa-chevron-right"></i>
+                <a href="/2020/12/03/Docker%E5%AE%89%E8%A3%85Redis/" rel="next" title="Docker安装Redis">
+                  Docker安装Redis <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

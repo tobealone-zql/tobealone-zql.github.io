@@ -37,6 +37,18 @@
       </tags>
   </entry>
   <entry>
+    <title>6-05-配置负载均衡规则</title>
+    <url>/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<h2 id="规则类型"><a href="#规则类型" class="headerlink" title="规则类型"></a>规则类型</h2><p><img src="/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/image-20210303224123478.png" alt="image-20210303224123478"></p>
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>6-06-细粒度配置自定义01-java代码方式</title>
     <url>/2020/05/07/6-06-%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%8901-java%E4%BB%A3%E7%A0%81%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -51,18 +63,6 @@
 
 
 
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>6-05-配置负载均衡规则</title>
-    <url>/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<h2 id="规则类型"><a href="#规则类型" class="headerlink" title="规则类型"></a>规则类型</h2><p><img src="/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/image-20210303224123478.png" alt="image-20210303224123478"></p>
 ]]></content>
       <tags>
         <tag>Spring Cloud alibaba 基础学习</tag>
@@ -89,27 +89,27 @@
       </tags>
   </entry>
   <entry>
-    <title>6-13-饥饿加载</title>
-    <url>/2020/05/07/6-13-%E9%A5%A5%E9%A5%BF%E5%8A%A0%E8%BD%BD/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>6-09-细粒度配置自定义04-两种方式对比</title>
     <url>/2020/05/07/6-09%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%8904-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
 <p><img src="/2020/05/07/6-09%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%8904-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94/image-20210303232342844.png" alt="image-20210303232342844"></p>
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>6-12-支持的配置项</title>
+    <url>/2020/05/07/6-12-%E6%94%AF%E6%8C%81%E7%9A%84%E9%85%8D%E7%BD%AE%E9%A1%B9/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+
+
+
 ]]></content>
       <tags>
         <tag>Spring Cloud alibaba 基础学习</tag>
@@ -130,8 +130,8 @@
       </tags>
   </entry>
   <entry>
-    <title>6-12-支持的配置项</title>
-    <url>/2020/05/07/6-12-%E6%94%AF%E6%8C%81%E7%9A%84%E9%85%8D%E7%BD%AE%E9%A1%B9/</url>
+    <title>6-13-饥饿加载</title>
+    <url>/2020/05/07/6-13-%E9%A5%A5%E9%A5%BF%E5%8A%A0%E8%BD%BD/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -216,8 +216,8 @@
       </tags>
   </entry>
   <entry>
-    <title>6-18-现有架构存在的问题</title>
-    <url>/2020/05/07/6-18-%E7%8E%B0%E6%9C%89%E6%9E%B6%E6%9E%84%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <title>6-16-扩展Ribbon-基于元数据的版本控制</title>
+    <url>/2020/05/07/6-16-%E6%89%A9%E5%B1%95Ribbon-%E5%9F%BA%E4%BA%8E%E5%85%83%E6%95%B0%E6%8D%AE%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -231,8 +231,8 @@
       </tags>
   </entry>
   <entry>
-    <title>6-16-扩展Ribbon-基于元数据的版本控制</title>
-    <url>/2020/05/07/6-16-%E6%89%A9%E5%B1%95Ribbon-%E5%9F%BA%E4%BA%8E%E5%85%83%E6%95%B0%E6%8D%AE%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</url>
+    <title>6-18-现有架构存在的问题</title>
+    <url>/2020/05/07/6-18-%E7%8E%B0%E6%9C%89%E6%9E%B6%E6%9E%84%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -432,19 +432,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Maven基本使用</title>
-    <url>/2020/12/01/Maven%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<h4 id="手动安装jar包"><a href="#手动安装jar包" class="headerlink" title="手动安装jar包"></a>手动安装jar包</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mvn install:install-file -DgroupId&#x3D;de.codecentric -DartifactId&#x3D;spring-boot-admin-starter-client -Dversion&#x3D;2.3.0 -Dpackaging&#x3D;jar -Dfile&#x3D;E:\spring-boot-admin-starter-client-2.3.0.jar</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Maven</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>maven依赖手动导入</title>
     <url>/2020/05/20/Maven%E4%BE%9D%E8%B5%96%E6%89%8B%E5%8A%A8%E5%AF%BC%E5%85%A5/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -464,16 +451,21 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Mysql基本操作</title>
-    <url>/2020/12/02/Mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <title>Mysql-50道练习题</title>
+    <url>/2021/03/08/Mysql-50%E9%81%93%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Maven基本使用</title>
+    <url>/2020/12/01/Maven%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
-<h4 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set password for root@localhost &#x3D; password(&quot;123456&quot;); </span><br></pre></td></tr></table></figure>
+<h4 id="手动安装jar包"><a href="#手动安装jar包" class="headerlink" title="手动安装jar包"></a>手动安装jar包</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mvn install:install-file -DgroupId&#x3D;de.codecentric -DartifactId&#x3D;spring-boot-admin-starter-client -Dversion&#x3D;2.3.0 -Dpackaging&#x3D;jar -Dfile&#x3D;E:\spring-boot-admin-starter-client-2.3.0.jar</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
-        <tag>Mysql</tag>
+        <tag>Maven</tag>
       </tags>
   </entry>
   <entry>
@@ -651,6 +643,19 @@
 </ol>
 <p><img src="/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/image-20210213212304485.png" alt="image-20210213212304485"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Mysql-基本操作</title>
+    <url>/2020/12/02/Mysql-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<h4 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set password for root@localhost &#x3D; password(&quot;123456&quot;); </span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Mysql</tag>
+      </tags>
   </entry>
   <entry>
     <title>Docker安装Jenkins实现自动部署</title>
