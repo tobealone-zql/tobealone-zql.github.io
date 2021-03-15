@@ -37,18 +37,6 @@
       </tags>
   </entry>
   <entry>
-    <title>6-05-配置负载均衡规则</title>
-    <url>/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<h2 id="规则类型"><a href="#规则类型" class="headerlink" title="规则类型"></a>规则类型</h2><p><img src="/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/image-20210303224123478.png" alt="image-20210303224123478"></p>
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>6-06-细粒度配置自定义01-java代码方式</title>
     <url>/2020/05/07/6-06-%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%8901-java%E4%BB%A3%E7%A0%81%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -63,6 +51,18 @@
 
 
 
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>6-05-配置负载均衡规则</title>
+    <url>/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<h2 id="规则类型"><a href="#规则类型" class="headerlink" title="规则类型"></a>规则类型</h2><p><img src="/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/image-20210303224123478.png" alt="image-20210303224123478"></p>
 ]]></content>
       <tags>
         <tag>Spring Cloud alibaba 基础学习</tag>
@@ -101,6 +101,20 @@
       </tags>
   </entry>
   <entry>
+    <title>6-11-全局配置</title>
+    <url>/2020/05/07/6-11-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<h4 id="1-项目目录"><a href="#1-项目目录" class="headerlink" title="1. 项目目录"></a>1. 项目目录</h4><p><img src="/2020/05/07/6-11-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/image-20210305175507490.png" alt="image-20210305175507490"></p>
+<h4 id="2-修改配置类UserCenterRibbonConfiguration"><a href="#2-修改配置类UserCenterRibbonConfiguration" class="headerlink" title="2. 修改配置类UserCenterRibbonConfiguration"></a>2. 修改配置类UserCenterRibbonConfiguration</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.configuration;</span><br><span class="line"></span><br><span class="line">import org.springframework.cloud.netflix.ribbon.RibbonClient;</span><br><span class="line">import org.springframework.cloud.netflix.ribbon.RibbonClients;</span><br><span class="line">import ribbonconfiguration.RibbonConfiguration;</span><br><span class="line"></span><br><span class="line">@RibbonClients(defaultConfiguration &#x3D; RibbonConfiguration.class)</span><br><span class="line">public class UserCenterRibbonConfiguration &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>6-12-支持的配置项</title>
     <url>/2020/05/07/6-12-%E6%94%AF%E6%8C%81%E7%9A%84%E9%85%8D%E7%BD%AE%E9%A1%B9/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -109,20 +123,6 @@
 
 
 
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>6-11-全局配置</title>
-    <url>/2020/05/07/6-11-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<h4 id="1-项目目录"><a href="#1-项目目录" class="headerlink" title="1. 项目目录"></a>1. 项目目录</h4><p><img src="/2020/05/07/6-11-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/image-20210305175507490.png" alt="image-20210305175507490"></p>
-<h4 id="2-修改配置类UserCenterRibbonConfiguration"><a href="#2-修改配置类UserCenterRibbonConfiguration" class="headerlink" title="2. 修改配置类UserCenterRibbonConfiguration"></a>2. 修改配置类UserCenterRibbonConfiguration</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.configuration;</span><br><span class="line"></span><br><span class="line">import org.springframework.cloud.netflix.ribbon.RibbonClient;</span><br><span class="line">import org.springframework.cloud.netflix.ribbon.RibbonClients;</span><br><span class="line">import ribbonconfiguration.RibbonConfiguration;</span><br><span class="line"></span><br><span class="line">@RibbonClients(defaultConfiguration &#x3D; RibbonConfiguration.class)</span><br><span class="line">public class UserCenterRibbonConfiguration &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -227,6 +227,21 @@
       </tags>
   </entry>
   <entry>
+    <title>6-17-深入理解Nacos的Namespace</title>
+    <url>/2020/05/07/6-17-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Nacos%E7%9A%84Namespace/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>6-18-现有架构存在的问题</title>
     <url>/2020/05/07/6-18-%E7%8E%B0%E6%9C%89%E6%9E%B6%E6%9E%84%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -270,14 +285,17 @@
       </tags>
   </entry>
   <entry>
-    <title>6-17-深入理解Nacos的Namespace</title>
-    <url>/2020/05/07/6-17-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Nacos%E7%9A%84Namespace/</url>
+    <title>7-03-细粒度配置自定义-01-Java代码方式-指定日志级别</title>
+    <url>/2021/03/09/7-03-%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89-01-Java%E4%BB%A3%E7%A0%81%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
+<h2 id="1-项目结构"><a href="#1-项目结构" class="headerlink" title="1. 项目结构"></a>1. 项目结构</h2><p><img src="/2021/03/09/7-03-%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89-01-Java%E4%BB%A3%E7%A0%81%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/image-20210308234835110.png" alt="image-20210308234835110"></p>
+<h2 id="2-修改content-center的application-yml文件"><a href="#2-修改content-center的application-yml文件" class="headerlink" title="2. 修改content-center的application.yml文件"></a>2. 修改content-center的application.yml文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;haike.myds.me:13911&#x2F;content_center</span><br><span class="line">    hikari:</span><br><span class="line">      username: root</span><br><span class="line">      password: root</span><br><span class="line">      driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: haike.myds.me:13916</span><br><span class="line">        # 修改为NJ</span><br><span class="line">        cluster-name: NJ</span><br><span class="line">        namespace: 46a69d7c-b8e4-4fa2-b906-a4cc49362120</span><br><span class="line">        metadata:</span><br><span class="line">          version: v1</span><br><span class="line">          target-version: v1</span><br><span class="line">  application:</span><br><span class="line">    name: content-center</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 9020</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user-center:</span><br><span class="line">  ribbon:</span><br><span class="line">    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">logging:</span><br><span class="line">  level:</span><br><span class="line">    com.zql.contentCenter.feignclient.UserCenterFeignClient: debug</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h2 id="2-新增UserCenterFeignConfiguration类"><a href="#2-新增UserCenterFeignConfiguration类" class="headerlink" title="2. 新增UserCenterFeignConfiguration类"></a>2. 新增UserCenterFeignConfiguration类</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.configuration;</span><br><span class="line"></span><br><span class="line">import feign.Logger;</span><br><span class="line">import org.springframework.context.annotation.Bean;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class UserCenterFeignConfiguration &#123;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public Logger.Level level() &#123;</span><br><span class="line"></span><br><span class="line">        return Logger.Level.FULL;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-
+<h2 id="3-修改UserCenterFeignClient类"><a href="#3-修改UserCenterFeignClient类" class="headerlink" title="3. 修改UserCenterFeignClient类"></a>3. 修改UserCenterFeignClient类</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.feignclient;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import com.zql.contentCenter.configuration.UserCenterFeignConfiguration;</span><br><span class="line">import com.zql.contentCenter.domain.dto.user.UserDTO;</span><br><span class="line">import org.springframework.cloud.openfeign.FeignClient;</span><br><span class="line">import org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.PathVariable;</span><br><span class="line"></span><br><span class="line">@FeignClient(name &#x3D; &quot;user-center&quot;,configuration &#x3D; UserCenterFeignConfiguration.class)</span><br><span class="line">public interface UserCenterFeignClient &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @GetMapping(&quot;&#x2F;user&#x2F;&#123;id&#125;&quot;)</span><br><span class="line">    public UserDTO getUser(@PathVariable Integer id);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -302,17 +320,15 @@
       </tags>
   </entry>
   <entry>
-    <title>7-03-细粒度配置自定义-01-Java代码方式-指定日志级别</title>
-    <url>/2021/03/09/7-03-%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89-01-Java%E4%BB%A3%E7%A0%81%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/</url>
+    <title>7-04-细粒度配置自定义-02-配置属性方式-指定日志级别</title>
+    <url>/2021/03/09/7-04-%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89-02-%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
-<h2 id="1-项目结构"><a href="#1-项目结构" class="headerlink" title="1. 项目结构"></a>1. 项目结构</h2><p><img src="/2021/03/09/7-03-%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89-01-Java%E4%BB%A3%E7%A0%81%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/image-20210308234835110.png" alt="image-20210308234835110"></p>
-<h2 id="2-修改content-center的application-yml文件"><a href="#2-修改content-center的application-yml文件" class="headerlink" title="2. 修改content-center的application.yml文件"></a>2. 修改content-center的application.yml文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;haike.myds.me:13911&#x2F;content_center</span><br><span class="line">    hikari:</span><br><span class="line">      username: root</span><br><span class="line">      password: root</span><br><span class="line">      driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: haike.myds.me:13916</span><br><span class="line">        # 修改为NJ</span><br><span class="line">        cluster-name: NJ</span><br><span class="line">        namespace: 46a69d7c-b8e4-4fa2-b906-a4cc49362120</span><br><span class="line">        metadata:</span><br><span class="line">          version: v1</span><br><span class="line">          target-version: v1</span><br><span class="line">  application:</span><br><span class="line">    name: content-center</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 9020</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user-center:</span><br><span class="line">  ribbon:</span><br><span class="line">    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">logging:</span><br><span class="line">  level:</span><br><span class="line">    com.zql.contentCenter.feignclient.UserCenterFeignClient: debug</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="1-项目目录"><a href="#1-项目目录" class="headerlink" title="1. 项目目录"></a>1. 项目目录</h2><p><img src="/2021/03/09/7-04-%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89-02-%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/image-20210310221647602.png" alt="image-20210310221647602"></p>
+<h2 id="2-修改UserCenterFeignClient"><a href="#2-修改UserCenterFeignClient" class="headerlink" title="2.  修改UserCenterFeignClient"></a>2.  修改UserCenterFeignClient</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.feignclient;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import com.zql.contentCenter.configuration.UserCenterFeignConfiguration;</span><br><span class="line">import com.zql.contentCenter.domain.dto.user.UserDTO;</span><br><span class="line">import org.springframework.cloud.openfeign.FeignClient;</span><br><span class="line">import org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.PathVariable;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;@FeignClient(name &#x3D; &quot;user-center&quot;,configuration &#x3D; UserCenterFeignConfiguration.class)</span><br><span class="line">@FeignClient(name &#x3D; &quot;user-center&quot;)</span><br><span class="line">public interface UserCenterFeignClient &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @GetMapping(&quot;&#x2F;user&#x2F;&#123;id&#125;&quot;)</span><br><span class="line">    public UserDTO getUser(@PathVariable Integer id);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-新增UserCenterFeignConfiguration类"><a href="#2-新增UserCenterFeignConfiguration类" class="headerlink" title="2. 新增UserCenterFeignConfiguration类"></a>2. 新增UserCenterFeignConfiguration类</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.configuration;</span><br><span class="line"></span><br><span class="line">import feign.Logger;</span><br><span class="line">import org.springframework.context.annotation.Bean;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class UserCenterFeignConfiguration &#123;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public Logger.Level level() &#123;</span><br><span class="line"></span><br><span class="line">        return Logger.Level.FULL;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-修改UserCenterFeignClient类"><a href="#3-修改UserCenterFeignClient类" class="headerlink" title="3. 修改UserCenterFeignClient类"></a>3. 修改UserCenterFeignClient类</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.feignclient;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import com.zql.contentCenter.configuration.UserCenterFeignConfiguration;</span><br><span class="line">import com.zql.contentCenter.domain.dto.user.UserDTO;</span><br><span class="line">import org.springframework.cloud.openfeign.FeignClient;</span><br><span class="line">import org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.PathVariable;</span><br><span class="line"></span><br><span class="line">@FeignClient(name &#x3D; &quot;user-center&quot;,configuration &#x3D; UserCenterFeignConfiguration.class)</span><br><span class="line">public interface UserCenterFeignClient &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @GetMapping(&quot;&#x2F;user&#x2F;&#123;id&#125;&quot;)</span><br><span class="line">    public UserDTO getUser(@PathVariable Integer id);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="3-修改application-yml"><a href="#3-修改application-yml" class="headerlink" title="3. 修改application.yml"></a>3. 修改application.yml</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;haike.myds.me:13911&#x2F;content_center</span><br><span class="line">    hikari:</span><br><span class="line">      username: root</span><br><span class="line">      password: root</span><br><span class="line">      driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: haike.myds.me:13916</span><br><span class="line">        # 修改为NJ</span><br><span class="line">        cluster-name: NJ</span><br><span class="line">        namespace: 46a69d7c-b8e4-4fa2-b906-a4cc49362120</span><br><span class="line">        metadata:</span><br><span class="line">          version: v1</span><br><span class="line">          target-version: v1</span><br><span class="line">  application:</span><br><span class="line">    name: content-center</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 9020</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user-center:</span><br><span class="line">  ribbon:</span><br><span class="line">    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">logging:</span><br><span class="line">  level:</span><br><span class="line">    com.zql.contentCenter.feignclient.UserCenterFeignClient: debug</span><br><span class="line"></span><br><span class="line">feign:</span><br><span class="line">  client:</span><br><span class="line">    config:</span><br><span class="line">      user-center:</span><br><span class="line">        loggerLevel: full</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -375,22 +391,6 @@
       </tags>
   </entry>
   <entry>
-    <title>7-04-细粒度配置自定义-02-配置属性方式-指定日志级别</title>
-    <url>/2021/03/09/7-04-%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89-02-%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<h2 id="1-项目目录"><a href="#1-项目目录" class="headerlink" title="1. 项目目录"></a>1. 项目目录</h2><p><img src="/2021/03/09/7-04-%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89-02-%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/image-20210310221647602.png" alt="image-20210310221647602"></p>
-<h2 id="2-修改UserCenterFeignClient"><a href="#2-修改UserCenterFeignClient" class="headerlink" title="2.  修改UserCenterFeignClient"></a>2.  修改UserCenterFeignClient</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.feignclient;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import com.zql.contentCenter.configuration.UserCenterFeignConfiguration;</span><br><span class="line">import com.zql.contentCenter.domain.dto.user.UserDTO;</span><br><span class="line">import org.springframework.cloud.openfeign.FeignClient;</span><br><span class="line">import org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.PathVariable;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;@FeignClient(name &#x3D; &quot;user-center&quot;,configuration &#x3D; UserCenterFeignConfiguration.class)</span><br><span class="line">@FeignClient(name &#x3D; &quot;user-center&quot;)</span><br><span class="line">public interface UserCenterFeignClient &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @GetMapping(&quot;&#x2F;user&#x2F;&#123;id&#125;&quot;)</span><br><span class="line">    public UserDTO getUser(@PathVariable Integer id);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-修改application-yml"><a href="#3-修改application-yml" class="headerlink" title="3. 修改application.yml"></a>3. 修改application.yml</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;haike.myds.me:13911&#x2F;content_center</span><br><span class="line">    hikari:</span><br><span class="line">      username: root</span><br><span class="line">      password: root</span><br><span class="line">      driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: haike.myds.me:13916</span><br><span class="line">        # 修改为NJ</span><br><span class="line">        cluster-name: NJ</span><br><span class="line">        namespace: 46a69d7c-b8e4-4fa2-b906-a4cc49362120</span><br><span class="line">        metadata:</span><br><span class="line">          version: v1</span><br><span class="line">          target-version: v1</span><br><span class="line">  application:</span><br><span class="line">    name: content-center</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 9020</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user-center:</span><br><span class="line">  ribbon:</span><br><span class="line">    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">logging:</span><br><span class="line">  level:</span><br><span class="line">    com.zql.contentCenter.feignclient.UserCenterFeignClient: debug</span><br><span class="line"></span><br><span class="line">feign:</span><br><span class="line">  client:</span><br><span class="line">    config:</span><br><span class="line">      user-center:</span><br><span class="line">        loggerLevel: full</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>7-08-配置最佳实践总结</title>
     <url>/2021/03/09/7-08-%E9%85%8D%E7%BD%AE%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -440,23 +440,6 @@
       </tags>
   </entry>
   <entry>
-    <title>7-12-RestTemplatevsFeign</title>
-    <url>/2021/03/09/7-12-RestTemplatevsFeign/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-
-
-
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>7-11-Feign脱离Ribbon使用</title>
     <url>/2021/03/09/7-11-Feign%E8%84%B1%E7%A6%BBRibbon%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -474,8 +457,8 @@
       </tags>
   </entry>
   <entry>
-    <title>7-14-常见问题总结</title>
-    <url>/2021/03/09/7-14-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+    <title>7-12-RestTemplatevsFeign</title>
+    <url>/2021/03/09/7-12-RestTemplatevsFeign/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -493,6 +476,23 @@
   <entry>
     <title>7-13-Feign性能优化</title>
     <url>/2021/03/09/7-13-Feign%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>7-14-常见问题总结</title>
+    <url>/2021/03/09/7-14-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -537,8 +537,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-02-常见容错方案</title>
-    <url>/2021/03/09/8-02-%E5%B8%B8%E8%A7%81%E5%AE%B9%E9%94%99%E6%96%B9%E6%A1%88/</url>
+    <title>8-03-使用Sentinel实现容错</title>
+    <url>/2021/03/09/8-03-%E4%BD%BF%E7%94%A8Sentinel%E5%AE%9E%E7%8E%B0%E5%AE%B9%E9%94%99/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -549,8 +549,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-03-使用Sentinel实现容错</title>
-    <url>/2021/03/09/8-03-%E4%BD%BF%E7%94%A8Sentinel%E5%AE%9E%E7%8E%B0%E5%AE%B9%E9%94%99/</url>
+    <title>8-02-常见容错方案</title>
+    <url>/2021/03/09/8-02-%E5%B8%B8%E8%A7%81%E5%AE%B9%E9%94%99%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -585,8 +585,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-07-热点规则详解【使用、场景、注意点、源码】</title>
-    <url>/2021/03/09/8-07-%E7%83%AD%E7%82%B9%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3%E3%80%90%E4%BD%BF%E7%94%A8%E3%80%81%E5%9C%BA%E6%99%AF%E3%80%81%E6%B3%A8%E6%84%8F%E7%82%B9%E3%80%81%E6%BA%90%E7%A0%81%E3%80%91/</url>
+    <title>8-06-降级规则详解【使用、流程、注意点、源码】</title>
+    <url>/2021/03/09/8-06-%E9%99%8D%E7%BA%A7%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3%E3%80%90%E4%BD%BF%E7%94%A8%E3%80%81%E6%B5%81%E7%A8%8B%E3%80%81%E6%B3%A8%E6%84%8F%E7%82%B9%E3%80%81%E6%BA%90%E7%A0%81%E3%80%91/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -597,8 +597,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-06-降级规则详解【使用、流程、注意点、源码】</title>
-    <url>/2021/03/09/8-06-%E9%99%8D%E7%BA%A7%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3%E3%80%90%E4%BD%BF%E7%94%A8%E3%80%81%E6%B5%81%E7%A8%8B%E3%80%81%E6%B3%A8%E6%84%8F%E7%82%B9%E3%80%81%E6%BA%90%E7%A0%81%E3%80%91/</url>
+    <title>8-07-热点规则详解【使用、场景、注意点、源码】</title>
+    <url>/2021/03/09/8-07-%E7%83%AD%E7%82%B9%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3%E3%80%90%E4%BD%BF%E7%94%A8%E3%80%81%E5%9C%BA%E6%99%AF%E3%80%81%E6%B3%A8%E6%84%8F%E7%82%B9%E3%80%81%E6%BA%90%E7%A0%81%E3%80%91/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -669,6 +669,18 @@
       </tags>
   </entry>
   <entry>
+    <title>8-13-SentinelAPI详解</title>
+    <url>/2021/03/09/8-13-SentinelAPI%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8-14-SentinelResource注解详解</title>
     <url>/2021/03/09/8-14-SentinelResource%E6%B3%A8%E8%A7%A3%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -683,18 +695,6 @@
   <entry>
     <title>8-16-Feign整合Sentinel</title>
     <url>/2021/03/09/8-16-Feign%E6%95%B4%E5%90%88Sentinel/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8-13-SentinelAPI详解</title>
-    <url>/2021/03/09/8-13-SentinelAPI%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -765,6 +765,30 @@
       </tags>
   </entry>
   <entry>
+    <title>8-22-扩展Sentinel-01-错误页优化</title>
+    <url>/2021/03/09/8-22-%E6%89%A9%E5%B1%95Sentinel-01-%E9%94%99%E8%AF%AF%E9%A1%B5%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8-23-扩展Sentinel-02-实现区分来源</title>
+    <url>/2021/03/09/8-23-%E6%89%A9%E5%B1%95Sentinel-02-%E5%AE%9E%E7%8E%B0%E5%8C%BA%E5%88%86%E6%9D%A5%E6%BA%90/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8-21-集群流控</title>
     <url>/2021/03/09/8-21-%E9%9B%86%E7%BE%A4%E6%B5%81%E6%8E%A7/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -789,20 +813,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-23-扩展Sentinel-02-实现区分来源</title>
-    <url>/2021/03/09/8-23-%E6%89%A9%E5%B1%95Sentinel-02-%E5%AE%9E%E7%8E%B0%E5%8C%BA%E5%88%86%E6%9D%A5%E6%BA%90/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8-22-扩展Sentinel-01-错误页优化</title>
-    <url>/2021/03/09/8-22-%E6%89%A9%E5%B1%95Sentinel-01-%E9%94%99%E8%AF%AF%E9%A1%B5%E4%BC%98%E5%8C%96/</url>
+    <title>8-25-扩展Sentinel-04-透过现象看本质</title>
+    <url>/2021/03/09/8-25-%E6%89%A9%E5%B1%95Sentinel-04-%E9%80%8F%E8%BF%87%E7%8E%B0%E8%B1%A1%E7%9C%8B%E6%9C%AC%E8%B4%A8/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -837,15 +849,30 @@
       </tags>
   </entry>
   <entry>
-    <title>8-25-扩展Sentinel-04-透过现象看本质</title>
-    <url>/2021/03/09/8-25-%E6%89%A9%E5%B1%95Sentinel-04-%E9%80%8F%E8%BF%87%E7%8E%B0%E8%B1%A1%E7%9C%8B%E6%9C%AC%E8%B4%A8/</url>
+    <title>CentOS7初始化及基本操作</title>
+    <url>/2021/01/14/CentOS7%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
+
+<h2 id="改为静态IP"><a href="#改为静态IP" class="headerlink" title="改为静态IP"></a>改为静态IP</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 编辑网卡配置文件</span><br><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 修改相关配置</span><br><span class="line">BOOTPROTO&#x3D;&quot;static&quot; #dhcp改为static </span><br><span class="line">ONBOOT&#x3D;&quot;yes&quot; #开机启用本配置</span><br><span class="line">IPADDR&#x3D;192.168.7.106 #静态IP</span><br><span class="line">GATEWAY&#x3D;192.168.7.1 #默认网关</span><br><span class="line">NETMASK&#x3D;255.255.255.0 #子网掩码</span><br><span class="line">DNS1&#x3D;192.168.7.1 #DNS 配置</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 重启网络服务</span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 查看IP</span><br><span class="line">ip addr</span><br></pre></td></tr></table></figure>
+
+<h2 id="yum安装wget"><a href="#yum安装wget" class="headerlink" title="yum安装wget"></a>yum安装wget</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="更改yum镜像源"><a href="#更改yum镜像源" class="headerlink" title="更改yum镜像源"></a>更改yum镜像源</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 备份原来的配置</span><br><span class="line">mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup</span><br><span class="line"># 下载ailiyun的yum源配置文件到&#x2F;etc&#x2F;yum.repos.d&#x2F;</span><br><span class="line">wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-7.repo</span><br><span class="line"># 运行yum makecache生成缓存</span><br><span class="line">yum makecache</span><br><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
+
 
 
 ]]></content>
       <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
+        <tag>Centos</tag>
       </tags>
   </entry>
   <entry>
@@ -923,33 +950,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CentOS7初始化及基本操作</title>
-    <url>/2021/01/14/CentOS7%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<h2 id="改为静态IP"><a href="#改为静态IP" class="headerlink" title="改为静态IP"></a>改为静态IP</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 编辑网卡配置文件</span><br><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 修改相关配置</span><br><span class="line">BOOTPROTO&#x3D;&quot;static&quot; #dhcp改为static </span><br><span class="line">ONBOOT&#x3D;&quot;yes&quot; #开机启用本配置</span><br><span class="line">IPADDR&#x3D;192.168.7.106 #静态IP</span><br><span class="line">GATEWAY&#x3D;192.168.7.1 #默认网关</span><br><span class="line">NETMASK&#x3D;255.255.255.0 #子网掩码</span><br><span class="line">DNS1&#x3D;192.168.7.1 #DNS 配置</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 重启网络服务</span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 查看IP</span><br><span class="line">ip addr</span><br></pre></td></tr></table></figure>
-
-<h2 id="yum安装wget"><a href="#yum安装wget" class="headerlink" title="yum安装wget"></a>yum安装wget</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="更改yum镜像源"><a href="#更改yum镜像源" class="headerlink" title="更改yum镜像源"></a>更改yum镜像源</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 备份原来的配置</span><br><span class="line">mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup</span><br><span class="line"># 下载ailiyun的yum源配置文件到&#x2F;etc&#x2F;yum.repos.d&#x2F;</span><br><span class="line">wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-7.repo</span><br><span class="line"># 运行yum makecache生成缓存</span><br><span class="line">yum makecache</span><br><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <tags>
-        <tag>Centos</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Docker安装Redis</title>
     <url>/2020/12/03/Docker%E5%AE%89%E8%A3%85Redis/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -969,6 +969,17 @@
 ]]></content>
       <tags>
         <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git操作</title>
+    <url>/2020/11/30/Git%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<h4 id="git-pull-push每次都需要输入密码问题"><a href="#git-pull-push每次都需要输入密码问题" class="headerlink" title="git pull/push每次都需要输入密码问题"></a>git pull/push每次都需要输入密码问题</h4>]]></content>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -1021,17 +1032,6 @@
 ]]></content>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git操作</title>
-    <url>/2020/11/30/Git%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<h4 id="git-pull-push每次都需要输入密码问题"><a href="#git-pull-push每次都需要输入密码问题" class="headerlink" title="git pull/push每次都需要输入密码问题"></a>git pull/push每次都需要输入密码问题</h4>]]></content>
-      <tags>
-        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -1359,16 +1359,6 @@
       </tags>
   </entry>
   <entry>
-    <title>快住脑，跟我动--Mysql优化</title>
-    <url>/2020/12/04/%E5%BF%AB%E4%BD%8F%E8%84%91%EF%BC%8C%E8%B7%9F%E6%88%91%E5%8A%A8-Mysql%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-]]></content>
-      <tags>
-        <tag>快住脑，跟我动系列</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>多线程初识</title>
     <url>/2020/12/09/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%88%9D%E8%AF%86/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -1378,6 +1368,16 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Test03  &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    private static Object lockA &#x3D; new Object();</span><br><span class="line">    private static Object lockB &#x3D; new Object();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static class  Add extends Thread &#123;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line">            synchronized(lockA) &#123;</span><br><span class="line"></span><br><span class="line">                System.err.println(&quot;add获取A锁&quot;);</span><br><span class="line">                try &#123;</span><br><span class="line">                    Thread.sleep(5000);</span><br><span class="line">                &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                synchronized(lockB) &#123;</span><br><span class="line"></span><br><span class="line">                    System.err.println(&quot;add获取B锁&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static class Del extends Thread  &#123;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line"></span><br><span class="line">            synchronized(lockB) &#123;</span><br><span class="line"></span><br><span class="line">                System.err.println(&quot;del获取B锁&quot;);</span><br><span class="line">                synchronized(lockA) &#123;</span><br><span class="line"></span><br><span class="line">                    System.err.println(&quot;del获取A锁&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        Add add &#x3D; new Add();</span><br><span class="line">        add.start();</span><br><span class="line"></span><br><span class="line">        Del del &#x3D; new Del();</span><br><span class="line">        del.start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>快住脑，跟我动--Mysql优化</title>
+    <url>/2020/12/04/%E5%BF%AB%E4%BD%8F%E8%84%91%EF%BC%8C%E8%B7%9F%E6%88%91%E5%8A%A8-Mysql%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+]]></content>
+      <tags>
+        <tag>快住脑，跟我动系列</tag>
+      </tags>
   </entry>
   <entry>
     <title>读《Java多线程编程实战指南》--线程状态</title>
