@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>6-04-Ribbon组成</title>
+    <url>/2020/05/07/6-04-Ribbon%E7%BB%84%E6%88%90/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<p><img src="/2020/05/07/6-04-Ribbon%E7%BB%84%E6%88%90/image-20210303223737785.png" alt="image-20210303223737785"></p>
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>6-03-使用Ribbon实现负载均衡</title>
     <url>/2020/05/07/6-03-%E4%BD%BF%E7%94%A8Ribbon%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -19,18 +31,6 @@
 <p><strong>修改后代码</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.service;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import com.zql.contentCenter.dao.content.ShareMapper;</span><br><span class="line">import com.zql.contentCenter.domain.dto.content.ShareDTO;</span><br><span class="line">import com.zql.contentCenter.domain.dto.user.UserDTO;</span><br><span class="line">import com.zql.contentCenter.domain.entity.content.Share;</span><br><span class="line">import org.springframework.beans.BeanUtils;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.cloud.client.ServiceInstance;</span><br><span class="line">import org.springframework.cloud.client.discovery.DiscoveryClient;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line">import org.springframework.web.client.RestTemplate;</span><br><span class="line"></span><br><span class="line">import java.net.URI;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Optional;</span><br><span class="line">import java.util.concurrent.ThreadLocalRandom;</span><br><span class="line">import java.util.stream.Collector;</span><br><span class="line">import java.util.stream.Collectors;</span><br><span class="line">import java.util.stream.Stream;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ShareService &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private ShareMapper shareMapper;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    public ShareDTO getById(Integer id) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Share share &#x3D; shareMapper.selectByPrimaryKey(id);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        UserDTO userDTO &#x3D; restTemplate.getForObject(&quot;http:&#x2F;&#x2F;user-center&#x2F;user&#x2F;&#123;id&#125;&quot;, UserDTO.class, id);</span><br><span class="line"></span><br><span class="line">        ShareDTO shareDTO &#x3D; new ShareDTO();</span><br><span class="line"></span><br><span class="line">        BeanUtils.copyProperties(share,shareDTO);</span><br><span class="line">        shareDTO.setUserDTO(userDTO);</span><br><span class="line"></span><br><span class="line">        return shareDTO;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>6-04-Ribbon组成</title>
-    <url>/2020/05/07/6-04-Ribbon%E7%BB%84%E6%88%90/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<p><img src="/2020/05/07/6-04-Ribbon%E7%BB%84%E6%88%90/image-20210303223737785.png" alt="image-20210303223737785"></p>
 ]]></content>
       <tags>
         <tag>Spring Cloud alibaba 基础学习</tag>
@@ -101,6 +101,20 @@
       </tags>
   </entry>
   <entry>
+    <title>6-11-全局配置</title>
+    <url>/2020/05/07/6-11-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<h4 id="1-项目目录"><a href="#1-项目目录" class="headerlink" title="1. 项目目录"></a>1. 项目目录</h4><p><img src="/2020/05/07/6-11-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/image-20210305175507490.png" alt="image-20210305175507490"></p>
+<h4 id="2-修改配置类UserCenterRibbonConfiguration"><a href="#2-修改配置类UserCenterRibbonConfiguration" class="headerlink" title="2. 修改配置类UserCenterRibbonConfiguration"></a>2. 修改配置类UserCenterRibbonConfiguration</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.configuration;</span><br><span class="line"></span><br><span class="line">import org.springframework.cloud.netflix.ribbon.RibbonClient;</span><br><span class="line">import org.springframework.cloud.netflix.ribbon.RibbonClients;</span><br><span class="line">import ribbonconfiguration.RibbonConfiguration;</span><br><span class="line"></span><br><span class="line">@RibbonClients(defaultConfiguration &#x3D; RibbonConfiguration.class)</span><br><span class="line">public class UserCenterRibbonConfiguration &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>6-12-支持的配置项</title>
     <url>/2020/05/07/6-12-%E6%94%AF%E6%8C%81%E7%9A%84%E9%85%8D%E7%BD%AE%E9%A1%B9/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -116,13 +130,14 @@
       </tags>
   </entry>
   <entry>
-    <title>6-11-全局配置</title>
-    <url>/2020/05/07/6-11-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</url>
+    <title>6-13-饥饿加载</title>
+    <url>/2020/05/07/6-13-%E9%A5%A5%E9%A5%BF%E5%8A%A0%E8%BD%BD/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
-<h4 id="1-项目目录"><a href="#1-项目目录" class="headerlink" title="1. 项目目录"></a>1. 项目目录</h4><p><img src="/2020/05/07/6-11-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/image-20210305175507490.png" alt="image-20210305175507490"></p>
-<h4 id="2-修改配置类UserCenterRibbonConfiguration"><a href="#2-修改配置类UserCenterRibbonConfiguration" class="headerlink" title="2. 修改配置类UserCenterRibbonConfiguration"></a>2. 修改配置类UserCenterRibbonConfiguration</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.configuration;</span><br><span class="line"></span><br><span class="line">import org.springframework.cloud.netflix.ribbon.RibbonClient;</span><br><span class="line">import org.springframework.cloud.netflix.ribbon.RibbonClients;</span><br><span class="line">import ribbonconfiguration.RibbonConfiguration;</span><br><span class="line"></span><br><span class="line">@RibbonClients(defaultConfiguration &#x3D; RibbonConfiguration.class)</span><br><span class="line">public class UserCenterRibbonConfiguration &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 
 ]]></content>
       <tags>
@@ -158,21 +173,6 @@
       </tags>
   </entry>
   <entry>
-    <title>6-13-饥饿加载</title>
-    <url>/2020/05/07/6-13-%E9%A5%A5%E9%A5%BF%E5%8A%A0%E8%BD%BD/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>6-15-扩展Ribbon-同一集群优先调用</title>
     <url>/2020/05/07/6-15-%E6%89%A9%E5%B1%95Ribbon-%E5%90%8C%E4%B8%80%E9%9B%86%E7%BE%A4%E4%BC%98%E5%85%88%E8%B0%83%E7%94%A8/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -201,6 +201,21 @@
       </tags>
   </entry>
   <entry>
+    <title>6-17-深入理解Nacos的Namespace</title>
+    <url>/2020/05/07/6-17-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Nacos%E7%9A%84Namespace/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>6-16-扩展Ribbon-基于元数据的版本控制</title>
     <url>/2020/05/07/6-16-%E6%89%A9%E5%B1%95Ribbon-%E5%9F%BA%E4%BA%8E%E5%85%83%E6%95%B0%E6%8D%AE%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -218,21 +233,6 @@
 
 
 <h4 id="5-修改user-center配置文件"><a href="#5-修改user-center配置文件" class="headerlink" title="5. 修改user-center配置文件"></a>5. 修改user-center配置文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;haike.myds.me:13911&#x2F;user_center</span><br><span class="line">    hikari:</span><br><span class="line">      username: root</span><br><span class="line">      password: root</span><br><span class="line">      driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: haike.myds.me:13916</span><br><span class="line">        cluster-name: BJ</span><br><span class="line">        namespace: 46a69d7c-b8e4-4fa2-b906-a4cc49362120</span><br><span class="line">      metadata:</span><br><span class="line">        version: v1</span><br><span class="line">        target-version: v1</span><br><span class="line">  application:</span><br><span class="line">    name: user-center</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 9011</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>6-17-深入理解Nacos的Namespace</title>
-    <url>/2020/05/07/6-17-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Nacos%E7%9A%84Namespace/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
 
 
 
@@ -285,23 +285,6 @@
       </tags>
   </entry>
   <entry>
-    <title>7-02-Feign的组成</title>
-    <url>/2021/03/09/7-02-Feign%E7%9A%84%E7%BB%84%E6%88%90/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-
-
-
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>7-03-细粒度配置自定义-01-Java代码方式-指定日志级别</title>
     <url>/2021/03/09/7-03-%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89-01-Java%E4%BB%A3%E7%A0%81%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -313,6 +296,23 @@
 <h2 id="2-新增UserCenterFeignConfiguration类"><a href="#2-新增UserCenterFeignConfiguration类" class="headerlink" title="2. 新增UserCenterFeignConfiguration类"></a>2. 新增UserCenterFeignConfiguration类</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.configuration;</span><br><span class="line"></span><br><span class="line">import feign.Logger;</span><br><span class="line">import org.springframework.context.annotation.Bean;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class UserCenterFeignConfiguration &#123;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public Logger.Level level() &#123;</span><br><span class="line"></span><br><span class="line">        return Logger.Level.FULL;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="3-修改UserCenterFeignClient类"><a href="#3-修改UserCenterFeignClient类" class="headerlink" title="3. 修改UserCenterFeignClient类"></a>3. 修改UserCenterFeignClient类</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.feignclient;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import com.zql.contentCenter.configuration.UserCenterFeignConfiguration;</span><br><span class="line">import com.zql.contentCenter.domain.dto.user.UserDTO;</span><br><span class="line">import org.springframework.cloud.openfeign.FeignClient;</span><br><span class="line">import org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.PathVariable;</span><br><span class="line"></span><br><span class="line">@FeignClient(name &#x3D; &quot;user-center&quot;,configuration &#x3D; UserCenterFeignConfiguration.class)</span><br><span class="line">public interface UserCenterFeignClient &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @GetMapping(&quot;&#x2F;user&#x2F;&#123;id&#125;&quot;)</span><br><span class="line">    public UserDTO getUser(@PathVariable Integer id);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>7-02-Feign的组成</title>
+    <url>/2021/03/09/7-02-Feign%E7%9A%84%E7%BB%84%E6%88%90/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+
+
+
+
 
 ]]></content>
       <tags>
@@ -354,6 +354,26 @@
       </tags>
   </entry>
   <entry>
+    <title>7-06-全局配置-02-配置属性方式-指定日志级别</title>
+    <url>/2021/03/09/7-06-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE-02-%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<h2 id="1-项目目录"><a href="#1-项目目录" class="headerlink" title="1. 项目目录"></a>1. 项目目录</h2><p><img src="/2021/03/09/7-06-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE-02-%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/image-20210310222926470.png" alt="image-20210310222926470"></p>
+<h2 id="2-修改application-yml"><a href="#2-修改application-yml" class="headerlink" title="2. 修改application.yml"></a>2. 修改application.yml</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;haike.myds.me:13911&#x2F;content_center</span><br><span class="line">    hikari:</span><br><span class="line">      username: root</span><br><span class="line">      password: root</span><br><span class="line">      driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: haike.myds.me:13916</span><br><span class="line">        # 修改为NJ</span><br><span class="line">        cluster-name: NJ</span><br><span class="line">        namespace: 46a69d7c-b8e4-4fa2-b906-a4cc49362120</span><br><span class="line">        metadata:</span><br><span class="line">          version: v1</span><br><span class="line">          target-version: v1</span><br><span class="line">  application:</span><br><span class="line">    name: content-center</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 9020</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user-center:</span><br><span class="line">  ribbon:</span><br><span class="line">    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">logging:</span><br><span class="line">  level:</span><br><span class="line">    com.zql.contentCenter.feignclient.UserCenterFeignClient: debug</span><br><span class="line"></span><br><span class="line"># 本次修改点</span><br><span class="line">feign:</span><br><span class="line">  client:</span><br><span class="line">    config:</span><br><span class="line">      default:</span><br><span class="line">        loggerLevel: full</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-修改CententCenterApplication"><a href="#3-修改CententCenterApplication" class="headerlink" title="3. 修改CententCenterApplication"></a>3. 修改CententCenterApplication</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter;</span><br><span class="line"></span><br><span class="line">import com.zql.contentCenter.configuration.GlobalFeignConfiguration;</span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line">import org.springframework.cloud.client.loadbalancer.LoadBalanced;</span><br><span class="line">import org.springframework.cloud.openfeign.EnableFeignClients;</span><br><span class="line">import org.springframework.context.annotation.Bean;</span><br><span class="line">import org.springframework.web.client.RestTemplate;</span><br><span class="line">import tk.mybatis.spring.annotation.MapperScan;</span><br><span class="line"></span><br><span class="line">@MapperScan(&quot;com.zql&quot;)</span><br><span class="line">@SpringBootApplication</span><br><span class="line">&#x2F;&#x2F;@EnableFeignClients(defaultConfiguration &#x3D; GlobalFeignConfiguration.class)</span><br><span class="line">&#x2F;&#x2F; 本次修改点</span><br><span class="line">@EnableFeignClients</span><br><span class="line">public class ContentCenterApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        SpringApplication.run(ContentCenterApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    @LoadBalanced</span><br><span class="line">    public RestTemplate restTemplate() &#123;</span><br><span class="line"></span><br><span class="line">        return new RestTemplate();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>7-07-支持的配置项</title>
     <url>/2021/03/09/7-07-%E6%94%AF%E6%8C%81%E7%9A%84%E9%85%8D%E7%BD%AE%E9%A1%B9/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -371,20 +391,15 @@
       </tags>
   </entry>
   <entry>
-    <title>7-06-全局配置-02-配置属性方式-指定日志级别</title>
-    <url>/2021/03/09/7-06-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE-02-%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/</url>
+    <title>7-08-配置最佳实践总结</title>
+    <url>/2021/03/09/7-08-%E9%85%8D%E7%BD%AE%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
-<h2 id="1-项目目录"><a href="#1-项目目录" class="headerlink" title="1. 项目目录"></a>1. 项目目录</h2><p><img src="/2021/03/09/7-06-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE-02-%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E6%96%B9%E5%BC%8F-%E6%8C%87%E5%AE%9A%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/image-20210310222926470.png" alt="image-20210310222926470"></p>
-<h2 id="2-修改application-yml"><a href="#2-修改application-yml" class="headerlink" title="2. 修改application.yml"></a>2. 修改application.yml</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;haike.myds.me:13911&#x2F;content_center</span><br><span class="line">    hikari:</span><br><span class="line">      username: root</span><br><span class="line">      password: root</span><br><span class="line">      driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: haike.myds.me:13916</span><br><span class="line">        # 修改为NJ</span><br><span class="line">        cluster-name: NJ</span><br><span class="line">        namespace: 46a69d7c-b8e4-4fa2-b906-a4cc49362120</span><br><span class="line">        metadata:</span><br><span class="line">          version: v1</span><br><span class="line">          target-version: v1</span><br><span class="line">  application:</span><br><span class="line">    name: content-center</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 9020</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user-center:</span><br><span class="line">  ribbon:</span><br><span class="line">    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">logging:</span><br><span class="line">  level:</span><br><span class="line">    com.zql.contentCenter.feignclient.UserCenterFeignClient: debug</span><br><span class="line"></span><br><span class="line"># 本次修改点</span><br><span class="line">feign:</span><br><span class="line">  client:</span><br><span class="line">    config:</span><br><span class="line">      default:</span><br><span class="line">        loggerLevel: full</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-修改CententCenterApplication"><a href="#3-修改CententCenterApplication" class="headerlink" title="3. 修改CententCenterApplication"></a>3. 修改CententCenterApplication</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter;</span><br><span class="line"></span><br><span class="line">import com.zql.contentCenter.configuration.GlobalFeignConfiguration;</span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line">import org.springframework.cloud.client.loadbalancer.LoadBalanced;</span><br><span class="line">import org.springframework.cloud.openfeign.EnableFeignClients;</span><br><span class="line">import org.springframework.context.annotation.Bean;</span><br><span class="line">import org.springframework.web.client.RestTemplate;</span><br><span class="line">import tk.mybatis.spring.annotation.MapperScan;</span><br><span class="line"></span><br><span class="line">@MapperScan(&quot;com.zql&quot;)</span><br><span class="line">@SpringBootApplication</span><br><span class="line">&#x2F;&#x2F;@EnableFeignClients(defaultConfiguration &#x3D; GlobalFeignConfiguration.class)</span><br><span class="line">&#x2F;&#x2F; 本次修改点</span><br><span class="line">@EnableFeignClients</span><br><span class="line">public class ContentCenterApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        SpringApplication.run(ContentCenterApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    @LoadBalanced</span><br><span class="line">    public RestTemplate restTemplate() &#123;</span><br><span class="line"></span><br><span class="line">        return new RestTemplate();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<h2 id="1-Ribbon配置-VS-Feign配置"><a href="#1-Ribbon配置-VS-Feign配置" class="headerlink" title="1. Ribbon配置 VS Feign配置"></a>1. Ribbon配置 VS Feign配置</h2><p><img src="/2021/03/09/7-08-%E9%85%8D%E7%BD%AE%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/image-20210310223629523.png" alt="image-20210310223629523"></p>
+<h2 id="2-Feign代码方式-VS-属性方式"><a href="#2-Feign代码方式-VS-属性方式" class="headerlink" title="2.   Feign代码方式 VS 属性方式"></a>2.   Feign代码方式 VS 属性方式</h2><p><img src="/2021/03/09/7-08-%E9%85%8D%E7%BD%AE%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/image-20210310223906912.png" alt="image-20210310223906912"></p>
+<p><img src="/2021/03/09/7-08-%E9%85%8D%E7%BD%AE%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/image-20210310223802321.png" alt="image-20210310223802321"></p>
+<h2 id="3-最佳实践"><a href="#3-最佳实践" class="headerlink" title="3. 最佳实践"></a>3. 最佳实践</h2><p><img src="/2021/03/09/7-08-%E9%85%8D%E7%BD%AE%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/image-20210310224008734.png" alt="image-20210310224008734"></p>
 ]]></content>
       <tags>
         <tag>Spring Cloud alibaba 基础学习</tag>
@@ -419,21 +434,6 @@
 
 
 
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>7-08-配置最佳实践总结</title>
-    <url>/2021/03/09/7-08-%E9%85%8D%E7%BD%AE%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<h2 id="1-Ribbon配置-VS-Feign配置"><a href="#1-Ribbon配置-VS-Feign配置" class="headerlink" title="1. Ribbon配置 VS Feign配置"></a>1. Ribbon配置 VS Feign配置</h2><p><img src="/2021/03/09/7-08-%E9%85%8D%E7%BD%AE%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/image-20210310223629523.png" alt="image-20210310223629523"></p>
-<h2 id="2-Feign代码方式-VS-属性方式"><a href="#2-Feign代码方式-VS-属性方式" class="headerlink" title="2.   Feign代码方式 VS 属性方式"></a>2.   Feign代码方式 VS 属性方式</h2><p><img src="/2021/03/09/7-08-%E9%85%8D%E7%BD%AE%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/image-20210310223906912.png" alt="image-20210310223906912"></p>
-<p><img src="/2021/03/09/7-08-%E9%85%8D%E7%BD%AE%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/image-20210310223802321.png" alt="image-20210310223802321"></p>
-<h2 id="3-最佳实践"><a href="#3-最佳实践" class="headerlink" title="3. 最佳实践"></a>3. 最佳实践</h2><p><img src="/2021/03/09/7-08-%E9%85%8D%E7%BD%AE%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/image-20210310224008734.png" alt="image-20210310224008734"></p>
 ]]></content>
       <tags>
         <tag>Spring Cloud alibaba 基础学习</tag>
@@ -494,6 +494,18 @@
       </tags>
   </entry>
   <entry>
+    <title>8-01-雪崩效应</title>
+    <url>/2021/03/09/8-01-%E9%9B%AA%E5%B4%A9%E6%95%88%E5%BA%94/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>7-14-常见问题总结</title>
     <url>/2021/03/09/7-14-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -520,18 +532,6 @@
 
 
 
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8-01-雪崩效应</title>
-    <url>/2021/03/09/8-01-%E9%9B%AA%E5%B4%A9%E6%95%88%E5%BA%94/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
 
 
 ]]></content>
@@ -630,8 +630,20 @@
       </tags>
   </entry>
   <entry>
-    <title>8-07-热点规则详解【使用、场景、注意点、源码】</title>
-    <url>/2021/03/09/8-07-%E7%83%AD%E7%82%B9%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3%E3%80%90%E4%BD%BF%E7%94%A8%E3%80%81%E5%9C%BA%E6%99%AF%E3%80%81%E6%B3%A8%E6%84%8F%E7%82%B9%E3%80%81%E6%BA%90%E7%A0%81%E3%80%91/</url>
+    <title>8-06-降级规则详解【使用、流程、注意点、源码】</title>
+    <url>/2021/03/09/8-06-%E9%99%8D%E7%BA%A7%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3%E3%80%90%E4%BD%BF%E7%94%A8%E3%80%81%E6%B5%81%E7%A8%8B%E3%80%81%E6%B3%A8%E6%84%8F%E7%82%B9%E3%80%81%E6%BA%90%E7%A0%81%E3%80%91/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8-09-授权规则详解</title>
+    <url>/2021/03/09/8-09-%E6%8E%88%E6%9D%83%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -654,20 +666,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-06-降级规则详解【使用、流程、注意点、源码】</title>
-    <url>/2021/03/09/8-06-%E9%99%8D%E7%BA%A7%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3%E3%80%90%E4%BD%BF%E7%94%A8%E3%80%81%E6%B5%81%E7%A8%8B%E3%80%81%E6%B3%A8%E6%84%8F%E7%82%B9%E3%80%81%E6%BA%90%E7%A0%81%E3%80%91/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8-09-授权规则详解</title>
-    <url>/2021/03/09/8-09-%E6%8E%88%E6%9D%83%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/</url>
+    <title>8-07-热点规则详解【使用、场景、注意点、源码】</title>
+    <url>/2021/03/09/8-07-%E7%83%AD%E7%82%B9%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3%E3%80%90%E4%BD%BF%E7%94%A8%E3%80%81%E5%9C%BA%E6%99%AF%E3%80%81%E6%B3%A8%E6%84%8F%E7%82%B9%E3%80%81%E6%BA%90%E7%A0%81%E3%80%91/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -761,8 +761,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-15-RestTemplate整合Sentinel</title>
-    <url>/2021/03/09/8-15-RestTemplate%E6%95%B4%E5%90%88Sentinel/</url>
+    <title>8-16-Feign整合Sentinel</title>
+    <url>/2021/03/09/8-16-Feign%E6%95%B4%E5%90%88Sentinel/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -773,8 +773,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-16-Feign整合Sentinel</title>
-    <url>/2021/03/09/8-16-Feign%E6%95%B4%E5%90%88Sentinel/</url>
+    <title>8-15-RestTemplate整合Sentinel</title>
+    <url>/2021/03/09/8-15-RestTemplate%E6%95%B4%E5%90%88Sentinel/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -809,8 +809,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-22-扩展Sentinel-01-错误页优化</title>
-    <url>/2021/03/09/8-22-%E6%89%A9%E5%B1%95Sentinel-01-%E9%94%99%E8%AF%AF%E9%A1%B5%E4%BC%98%E5%8C%96/</url>
+    <title>8-19-规则持久化-02-推模式</title>
+    <url>/2021/03/09/8-19-%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96-02-%E6%8E%A8%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -833,6 +833,18 @@
       </tags>
   </entry>
   <entry>
+    <title>8-20-生产环境使用Sentinel</title>
+    <url>/2021/03/09/8-20-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%BD%BF%E7%94%A8Sentinel/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8-23-扩展Sentinel-02-实现区分来源</title>
     <url>/2021/03/09/8-23-%E6%89%A9%E5%B1%95Sentinel-02-%E5%AE%9E%E7%8E%B0%E5%8C%BA%E5%88%86%E6%9D%A5%E6%BA%90/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -845,20 +857,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-19-规则持久化-02-推模式</title>
-    <url>/2021/03/09/8-19-%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96-02-%E6%8E%A8%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8-20-生产环境使用Sentinel</title>
-    <url>/2021/03/09/8-20-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%BD%BF%E7%94%A8Sentinel/</url>
+    <title>8-22-扩展Sentinel-01-错误页优化</title>
+    <url>/2021/03/09/8-22-%E6%89%A9%E5%B1%95Sentinel-01-%E9%94%99%E8%AF%AF%E9%A1%B5%E4%BC%98%E5%8C%96/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -893,30 +893,6 @@
       </tags>
   </entry>
   <entry>
-    <title>8-26-配置项总结</title>
-    <url>/2021/03/09/8-26-%E9%85%8D%E7%BD%AE%E9%A1%B9%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8-27-本章总结：再谈常见容错方案</title>
-    <url>/2021/03/09/8-27-%E6%9C%AC%E7%AB%A0%E6%80%BB%E7%BB%93%EF%BC%9A%E5%86%8D%E8%B0%88%E5%B8%B8%E8%A7%81%E5%AE%B9%E9%94%99%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CentOS7初始化及基本操作</title>
     <url>/2021/01/14/CentOS7%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -941,6 +917,30 @@
 ]]></content>
       <tags>
         <tag>Centos</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8-27-本章总结：再谈常见容错方案</title>
+    <url>/2021/03/09/8-27-%E6%9C%AC%E7%AB%A0%E6%80%BB%E7%BB%93%EF%BC%9A%E5%86%8D%E8%B0%88%E5%B8%B8%E8%A7%81%E5%AE%B9%E9%94%99%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8-26-配置项总结</title>
+    <url>/2021/03/09/8-26-%E9%85%8D%E7%BD%AE%E9%A1%B9%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1135,6 +1135,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Mysql-基本操作</title>
+    <url>/2020/12/02/Mysql-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<h4 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set password for root@localhost &#x3D; password(&quot;123456&quot;); </span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenWrt主路由基本设置</title>
     <url>/2021/02/13/OpenWrt%E4%B8%BB%E8%B7%AF%E7%94%B1%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -1311,19 +1324,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Mysql-基本操作</title>
-    <url>/2020/12/02/Mysql-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<h4 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set password for root@localhost &#x3D; password(&quot;123456&quot;); </span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Mysql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Docker安装Jenkins实现自动部署</title>
     <url>/2020/11/28/docker%E5%AE%89%E8%A3%85Jenkins%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -1438,6 +1438,16 @@
 ]]></content>
   </entry>
   <entry>
+    <title>快住脑，跟我动--Mysql优化</title>
+    <url>/2020/12/04/%E5%BF%AB%E4%BD%8F%E8%84%91%EF%BC%8C%E8%B7%9F%E6%88%91%E5%8A%A8-Mysql%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+]]></content>
+      <tags>
+        <tag>快住脑，跟我动系列</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>读《Java多线程编程实战指南》--线程状态</title>
     <url>/2020/12/04/%E8%AF%BB%E3%80%8AJava%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97%E3%80%8B--%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -1450,16 +1460,6 @@
 ]]></content>
       <tags>
         <tag>读《Java多线程编程实战指南》</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>快住脑，跟我动--Mysql优化</title>
-    <url>/2020/12/04/%E5%BF%AB%E4%BD%8F%E8%84%91%EF%BC%8C%E8%B7%9F%E6%88%91%E5%8A%A8-Mysql%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-]]></content>
-      <tags>
-        <tag>快住脑，跟我动系列</tag>
       </tags>
   </entry>
 </search>
