@@ -13,18 +13,6 @@
       </tags>
   </entry>
   <entry>
-    <title>6-05-配置负载均衡规则</title>
-    <url>/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<h2 id="规则类型"><a href="#规则类型" class="headerlink" title="规则类型"></a>规则类型</h2><p><img src="/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/image-20210303224123478.png" alt="image-20210303224123478"></p>
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>6-03-使用Ribbon实现负载均衡</title>
     <url>/2020/05/07/6-03-%E4%BD%BF%E7%94%A8Ribbon%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -43,6 +31,18 @@
 <p><strong>修改后代码</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.service;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import com.zql.contentCenter.dao.content.ShareMapper;</span><br><span class="line">import com.zql.contentCenter.domain.dto.content.ShareDTO;</span><br><span class="line">import com.zql.contentCenter.domain.dto.user.UserDTO;</span><br><span class="line">import com.zql.contentCenter.domain.entity.content.Share;</span><br><span class="line">import org.springframework.beans.BeanUtils;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.cloud.client.ServiceInstance;</span><br><span class="line">import org.springframework.cloud.client.discovery.DiscoveryClient;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line">import org.springframework.web.client.RestTemplate;</span><br><span class="line"></span><br><span class="line">import java.net.URI;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Optional;</span><br><span class="line">import java.util.concurrent.ThreadLocalRandom;</span><br><span class="line">import java.util.stream.Collector;</span><br><span class="line">import java.util.stream.Collectors;</span><br><span class="line">import java.util.stream.Stream;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ShareService &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private ShareMapper shareMapper;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    public ShareDTO getById(Integer id) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Share share &#x3D; shareMapper.selectByPrimaryKey(id);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        UserDTO userDTO &#x3D; restTemplate.getForObject(&quot;http:&#x2F;&#x2F;user-center&#x2F;user&#x2F;&#123;id&#125;&quot;, UserDTO.class, id);</span><br><span class="line"></span><br><span class="line">        ShareDTO shareDTO &#x3D; new ShareDTO();</span><br><span class="line"></span><br><span class="line">        BeanUtils.copyProperties(share,shareDTO);</span><br><span class="line">        shareDTO.setUserDTO(userDTO);</span><br><span class="line"></span><br><span class="line">        return shareDTO;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>6-05-配置负载均衡规则</title>
+    <url>/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<h2 id="规则类型"><a href="#规则类型" class="headerlink" title="规则类型"></a>规则类型</h2><p><img src="/2020/05/07/6-05-%E9%85%8D%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99/image-20210303224123478.png" alt="image-20210303224123478"></p>
 ]]></content>
       <tags>
         <tag>Spring Cloud alibaba 基础学习</tag>
@@ -89,20 +89,6 @@
       </tags>
   </entry>
   <entry>
-    <title>6-11-全局配置</title>
-    <url>/2020/05/07/6-11-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<h4 id="1-项目目录"><a href="#1-项目目录" class="headerlink" title="1. 项目目录"></a>1. 项目目录</h4><p><img src="/2020/05/07/6-11-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/image-20210305175507490.png" alt="image-20210305175507490"></p>
-<h4 id="2-修改配置类UserCenterRibbonConfiguration"><a href="#2-修改配置类UserCenterRibbonConfiguration" class="headerlink" title="2. 修改配置类UserCenterRibbonConfiguration"></a>2. 修改配置类UserCenterRibbonConfiguration</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.configuration;</span><br><span class="line"></span><br><span class="line">import org.springframework.cloud.netflix.ribbon.RibbonClient;</span><br><span class="line">import org.springframework.cloud.netflix.ribbon.RibbonClients;</span><br><span class="line">import ribbonconfiguration.RibbonConfiguration;</span><br><span class="line"></span><br><span class="line">@RibbonClients(defaultConfiguration &#x3D; RibbonConfiguration.class)</span><br><span class="line">public class UserCenterRibbonConfiguration &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>6-09-细粒度配置自定义04-两种方式对比</title>
     <url>/2020/05/07/6-09-%E7%BB%86%E7%B2%92%E5%BA%A6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%8904-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -123,6 +109,20 @@
 
 
 
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>6-11-全局配置</title>
+    <url>/2020/05/07/6-11-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<h4 id="1-项目目录"><a href="#1-项目目录" class="headerlink" title="1. 项目目录"></a>1. 项目目录</h4><p><img src="/2020/05/07/6-11-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/image-20210305175507490.png" alt="image-20210305175507490"></p>
+<h4 id="2-修改配置类UserCenterRibbonConfiguration"><a href="#2-修改配置类UserCenterRibbonConfiguration" class="headerlink" title="2. 修改配置类UserCenterRibbonConfiguration"></a>2. 修改配置类UserCenterRibbonConfiguration</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.zql.contentCenter.configuration;</span><br><span class="line"></span><br><span class="line">import org.springframework.cloud.netflix.ribbon.RibbonClient;</span><br><span class="line">import org.springframework.cloud.netflix.ribbon.RibbonClients;</span><br><span class="line">import ribbonconfiguration.RibbonConfiguration;</span><br><span class="line"></span><br><span class="line">@RibbonClients(defaultConfiguration &#x3D; RibbonConfiguration.class)</span><br><span class="line">public class UserCenterRibbonConfiguration &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -227,8 +227,8 @@
       </tags>
   </entry>
   <entry>
-    <title>6-18-现有架构存在的问题</title>
-    <url>/2020/05/07/6-18-%E7%8E%B0%E6%9C%89%E6%9E%B6%E6%9E%84%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <title>6-17-深入理解Nacos的Namespace</title>
+    <url>/2020/05/07/6-17-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Nacos%E7%9A%84Namespace/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -242,8 +242,8 @@
       </tags>
   </entry>
   <entry>
-    <title>6-17-深入理解Nacos的Namespace</title>
-    <url>/2020/05/07/6-17-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Nacos%E7%9A%84Namespace/</url>
+    <title>6-18-现有架构存在的问题</title>
+    <url>/2020/05/07/6-18-%E7%8E%B0%E6%9C%89%E6%9E%B6%E6%9E%84%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -457,30 +457,6 @@
       </tags>
   </entry>
   <entry>
-    <title>7-13-Feign性能优化</title>
-    <url>/2021/04/15/7-13-Feign%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<p><img src="/2021/04/15/7-13-Feign%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/image-20210322222907614.png" alt="image-20210322222907614"></p>
-<h2 id="优化方式一：配置连接池"><a href="#优化方式一：配置连接池" class="headerlink" title="优化方式一：配置连接池"></a>优化方式一：配置连接池</h2><h4 id="1-添加依赖"><a href="#1-添加依赖" class="headerlink" title="1. 添加依赖"></a>1. 添加依赖</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0&quot;</span><br><span class="line">         xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0 http:&#x2F;&#x2F;maven.apache.org&#x2F;xsd&#x2F;maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;&#x2F;modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.1.5.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">        &lt;relativePath&#x2F;&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;&#x2F;parent&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.zql.user-center&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;content-center&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;&#x2F;version&gt;</span><br><span class="line"></span><br><span class="line">    &lt;name&gt;content-center&lt;&#x2F;name&gt;</span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;&#x2F;description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;&#x2F;java.version&gt;</span><br><span class="line">    &lt;&#x2F;properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;tk.mybatis&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mapper-spring-boot-starter&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.1.5&lt;&#x2F;version&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;scope&gt;runtime&lt;&#x2F;scope&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-test&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;&#x2F;scope&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.projectlombok&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;lombok&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.18.8&lt;&#x2F;version&gt;</span><br><span class="line">            &lt;scope&gt;provided&lt;&#x2F;scope&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;!--        spring-boot-starter-xxxx--&gt;</span><br><span class="line">&lt;!--        xxxx-spring-boot-starter--&gt;</span><br><span class="line">&lt;!--        spring-cloud-starter-&#123;spring cloud子项目的名称&#125;-[&#123;模块名称&#125;]--&gt;</span><br><span class="line">&lt;!--        feign spring-cloud-starter-openfeign--&gt;</span><br><span class="line">&lt;!--        sentinel spring-cloud-starter-alibaba-sentinel--&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-discovery&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!--   本次修改点     --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;io.github.openfeign&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;feign-httpclient&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;org.apache.rocketmq&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;rocketmq-spring-boot-starter&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;version&gt;2.0.3&lt;&#x2F;version&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;spring-cloud-starter-stream-rocketmq&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;io.jsonwebtoken&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;jjwt-api&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;version&gt;0.10.7&lt;&#x2F;version&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;io.jsonwebtoken&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;jjwt-impl&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;version&gt;0.10.7&lt;&#x2F;version&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;scope&gt;runtime&lt;&#x2F;scope&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;io.jsonwebtoken&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;jjwt-jackson&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;version&gt;0.10.7&lt;&#x2F;version&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;scope&gt;runtime&lt;&#x2F;scope&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;com.github.binarywang&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;weixin-java-miniapp&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;version&gt;3.5.0&lt;&#x2F;version&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;spring-boot-starter-aop&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;spring-boot-starter-actuator&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line">    &lt;&#x2F;dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencyManagement&gt;</span><br><span class="line">        &lt;dependencies&gt;</span><br><span class="line">            &lt;!--整合spring cloud--&gt;</span><br><span class="line">            &lt;dependency&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-cloud-dependencies&lt;&#x2F;artifactId&gt;</span><br><span class="line">                &lt;version&gt;Greenwich.SR1&lt;&#x2F;version&gt;</span><br><span class="line">                &lt;type&gt;pom&lt;&#x2F;type&gt;</span><br><span class="line">                &lt;scope&gt;import&lt;&#x2F;scope&gt;</span><br><span class="line">            &lt;&#x2F;dependency&gt;</span><br><span class="line">            &lt;!--整合spring cloud alibaba--&gt;</span><br><span class="line">            &lt;dependency&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-cloud-alibaba-dependencies&lt;&#x2F;artifactId&gt;</span><br><span class="line">                &lt;version&gt;0.9.0.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">                &lt;type&gt;pom&lt;&#x2F;type&gt;</span><br><span class="line">                &lt;scope&gt;import&lt;&#x2F;scope&gt;</span><br><span class="line">            &lt;&#x2F;dependency&gt;</span><br><span class="line">        &lt;&#x2F;dependencies&gt;</span><br><span class="line">    &lt;&#x2F;dependencyManagement&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;&#x2F;plugin&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.mybatis.generator&lt;&#x2F;groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;&#x2F;artifactId&gt;</span><br><span class="line">                &lt;version&gt;1.3.6&lt;&#x2F;version&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;configurationFile&gt;</span><br><span class="line">                        $&#123;basedir&#125;&#x2F;src&#x2F;main&#x2F;resources&#x2F;generator&#x2F;generatorConfig.xml</span><br><span class="line">                    &lt;&#x2F;configurationFile&gt;</span><br><span class="line">                    &lt;overwrite&gt;true&lt;&#x2F;overwrite&gt;</span><br><span class="line">                    &lt;verbose&gt;true&lt;&#x2F;verbose&gt;</span><br><span class="line">                &lt;&#x2F;configuration&gt;</span><br><span class="line">                &lt;dependencies&gt;</span><br><span class="line">                    &lt;dependency&gt;</span><br><span class="line">                        &lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;</span><br><span class="line">                        &lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;</span><br><span class="line">                        &lt;version&gt;5.1.22&lt;&#x2F;version&gt;</span><br><span class="line">                    &lt;&#x2F;dependency&gt;</span><br><span class="line">                    &lt;dependency&gt;</span><br><span class="line">                        &lt;groupId&gt;tk.mybatis&lt;&#x2F;groupId&gt;</span><br><span class="line">                        &lt;artifactId&gt;mapper&lt;&#x2F;artifactId&gt;</span><br><span class="line">                        &lt;version&gt;4.1.5&lt;&#x2F;version&gt;</span><br><span class="line">                    &lt;&#x2F;dependency&gt;</span><br><span class="line">                &lt;&#x2F;dependencies&gt;</span><br><span class="line">            &lt;&#x2F;plugin&gt;</span><br><span class="line">        &lt;&#x2F;plugins&gt;</span><br><span class="line">    &lt;&#x2F;build&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;project&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2. 修改配置文件"></a>2. 修改配置文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;haike.myds.me:13911&#x2F;content_center</span><br><span class="line">    hikari:</span><br><span class="line">      username: root</span><br><span class="line">      password: root</span><br><span class="line">      driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: haike.myds.me:13916</span><br><span class="line">        # 修改为NJ</span><br><span class="line">        cluster-name: NJ</span><br><span class="line">        namespace: 46a69d7c-b8e4-4fa2-b906-a4cc49362120</span><br><span class="line">        metadata:</span><br><span class="line">          version: v1</span><br><span class="line">          target-version: v1</span><br><span class="line">  application:</span><br><span class="line">    name: content-center</span><br><span class="line"></span><br><span class="line">## 本次修改点</span><br><span class="line">  main:</span><br><span class="line">    allow-bean-definition-overriding: true</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 9020</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user-center:</span><br><span class="line">  ribbon:</span><br><span class="line">    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">logging:</span><br><span class="line">  level:</span><br><span class="line">    com.zql.contentCenter.feignclient.UserCenterFeignClient: debug</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">feign:</span><br><span class="line">  client:</span><br><span class="line">    config:</span><br><span class="line">      default:</span><br><span class="line">        loggerLevel: full</span><br><span class="line">  ## 本次修改点</span><br><span class="line">  httpclient:</span><br><span class="line">    # 让feign使用apache httpclient做请求；而不是默认的urlconnection</span><br><span class="line">    enabled: true</span><br><span class="line">    # feign的最大连接数</span><br><span class="line">    max-connections: 200</span><br><span class="line">    # feign单个路径的最大连接数</span><br><span class="line">    max-connections-per-route: 50</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>7-12-RestTemplatevsFeign</title>
     <url>/2021/04/15/7-12-RestTemplatevsFeign/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -494,10 +470,17 @@
       </tags>
   </entry>
   <entry>
-    <title>7-15-现有架构总结</title>
-    <url>/2021/04/15/7-15-%E7%8E%B0%E6%9C%89%E6%9E%B6%E6%9E%84%E6%80%BB%E7%BB%93/</url>
+    <title>7-13-Feign性能优化</title>
+    <url>/2021/04/15/7-13-Feign%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
+
+<p><img src="/2021/04/15/7-13-Feign%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/image-20210322222907614.png" alt="image-20210322222907614"></p>
+<h2 id="优化方式一：配置连接池"><a href="#优化方式一：配置连接池" class="headerlink" title="优化方式一：配置连接池"></a>优化方式一：配置连接池</h2><h4 id="1-添加依赖"><a href="#1-添加依赖" class="headerlink" title="1. 添加依赖"></a>1. 添加依赖</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0&quot;</span><br><span class="line">         xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0 http:&#x2F;&#x2F;maven.apache.org&#x2F;xsd&#x2F;maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;&#x2F;modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.1.5.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">        &lt;relativePath&#x2F;&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;&#x2F;parent&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.zql.user-center&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;content-center&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;&#x2F;version&gt;</span><br><span class="line"></span><br><span class="line">    &lt;name&gt;content-center&lt;&#x2F;name&gt;</span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;&#x2F;description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;&#x2F;java.version&gt;</span><br><span class="line">    &lt;&#x2F;properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;tk.mybatis&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mapper-spring-boot-starter&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.1.5&lt;&#x2F;version&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;scope&gt;runtime&lt;&#x2F;scope&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-test&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;&#x2F;scope&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.projectlombok&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;lombok&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.18.8&lt;&#x2F;version&gt;</span><br><span class="line">            &lt;scope&gt;provided&lt;&#x2F;scope&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;!--        spring-boot-starter-xxxx--&gt;</span><br><span class="line">&lt;!--        xxxx-spring-boot-starter--&gt;</span><br><span class="line">&lt;!--        spring-cloud-starter-&#123;spring cloud子项目的名称&#125;-[&#123;模块名称&#125;]--&gt;</span><br><span class="line">&lt;!--        feign spring-cloud-starter-openfeign--&gt;</span><br><span class="line">&lt;!--        sentinel spring-cloud-starter-alibaba-sentinel--&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-discovery&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!--   本次修改点     --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;io.github.openfeign&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;feign-httpclient&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;org.apache.rocketmq&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;rocketmq-spring-boot-starter&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;version&gt;2.0.3&lt;&#x2F;version&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;spring-cloud-starter-stream-rocketmq&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;io.jsonwebtoken&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;jjwt-api&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;version&gt;0.10.7&lt;&#x2F;version&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;io.jsonwebtoken&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;jjwt-impl&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;version&gt;0.10.7&lt;&#x2F;version&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;scope&gt;runtime&lt;&#x2F;scope&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;io.jsonwebtoken&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;jjwt-jackson&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;version&gt;0.10.7&lt;&#x2F;version&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;scope&gt;runtime&lt;&#x2F;scope&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;com.github.binarywang&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;weixin-java-miniapp&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;version&gt;3.5.0&lt;&#x2F;version&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;spring-boot-starter-aop&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--        &lt;dependency&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;artifactId&gt;spring-boot-starter-actuator&lt;&#x2F;artifactId&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;&#x2F;dependency&gt;--&gt;</span><br><span class="line">    &lt;&#x2F;dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencyManagement&gt;</span><br><span class="line">        &lt;dependencies&gt;</span><br><span class="line">            &lt;!--整合spring cloud--&gt;</span><br><span class="line">            &lt;dependency&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-cloud-dependencies&lt;&#x2F;artifactId&gt;</span><br><span class="line">                &lt;version&gt;Greenwich.SR1&lt;&#x2F;version&gt;</span><br><span class="line">                &lt;type&gt;pom&lt;&#x2F;type&gt;</span><br><span class="line">                &lt;scope&gt;import&lt;&#x2F;scope&gt;</span><br><span class="line">            &lt;&#x2F;dependency&gt;</span><br><span class="line">            &lt;!--整合spring cloud alibaba--&gt;</span><br><span class="line">            &lt;dependency&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-cloud-alibaba-dependencies&lt;&#x2F;artifactId&gt;</span><br><span class="line">                &lt;version&gt;0.9.0.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">                &lt;type&gt;pom&lt;&#x2F;type&gt;</span><br><span class="line">                &lt;scope&gt;import&lt;&#x2F;scope&gt;</span><br><span class="line">            &lt;&#x2F;dependency&gt;</span><br><span class="line">        &lt;&#x2F;dependencies&gt;</span><br><span class="line">    &lt;&#x2F;dependencyManagement&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;&#x2F;plugin&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.mybatis.generator&lt;&#x2F;groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;&#x2F;artifactId&gt;</span><br><span class="line">                &lt;version&gt;1.3.6&lt;&#x2F;version&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;configurationFile&gt;</span><br><span class="line">                        $&#123;basedir&#125;&#x2F;src&#x2F;main&#x2F;resources&#x2F;generator&#x2F;generatorConfig.xml</span><br><span class="line">                    &lt;&#x2F;configurationFile&gt;</span><br><span class="line">                    &lt;overwrite&gt;true&lt;&#x2F;overwrite&gt;</span><br><span class="line">                    &lt;verbose&gt;true&lt;&#x2F;verbose&gt;</span><br><span class="line">                &lt;&#x2F;configuration&gt;</span><br><span class="line">                &lt;dependencies&gt;</span><br><span class="line">                    &lt;dependency&gt;</span><br><span class="line">                        &lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;</span><br><span class="line">                        &lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;</span><br><span class="line">                        &lt;version&gt;5.1.22&lt;&#x2F;version&gt;</span><br><span class="line">                    &lt;&#x2F;dependency&gt;</span><br><span class="line">                    &lt;dependency&gt;</span><br><span class="line">                        &lt;groupId&gt;tk.mybatis&lt;&#x2F;groupId&gt;</span><br><span class="line">                        &lt;artifactId&gt;mapper&lt;&#x2F;artifactId&gt;</span><br><span class="line">                        &lt;version&gt;4.1.5&lt;&#x2F;version&gt;</span><br><span class="line">                    &lt;&#x2F;dependency&gt;</span><br><span class="line">                &lt;&#x2F;dependencies&gt;</span><br><span class="line">            &lt;&#x2F;plugin&gt;</span><br><span class="line">        &lt;&#x2F;plugins&gt;</span><br><span class="line">    &lt;&#x2F;build&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;project&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2. 修改配置文件"></a>2. 修改配置文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;haike.myds.me:13911&#x2F;content_center</span><br><span class="line">    hikari:</span><br><span class="line">      username: root</span><br><span class="line">      password: root</span><br><span class="line">      driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: haike.myds.me:13916</span><br><span class="line">        # 修改为NJ</span><br><span class="line">        cluster-name: NJ</span><br><span class="line">        namespace: 46a69d7c-b8e4-4fa2-b906-a4cc49362120</span><br><span class="line">        metadata:</span><br><span class="line">          version: v1</span><br><span class="line">          target-version: v1</span><br><span class="line">  application:</span><br><span class="line">    name: content-center</span><br><span class="line"></span><br><span class="line">## 本次修改点</span><br><span class="line">  main:</span><br><span class="line">    allow-bean-definition-overriding: true</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 9020</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user-center:</span><br><span class="line">  ribbon:</span><br><span class="line">    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">logging:</span><br><span class="line">  level:</span><br><span class="line">    com.zql.contentCenter.feignclient.UserCenterFeignClient: debug</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">feign:</span><br><span class="line">  client:</span><br><span class="line">    config:</span><br><span class="line">      default:</span><br><span class="line">        loggerLevel: full</span><br><span class="line">  ## 本次修改点</span><br><span class="line">  httpclient:</span><br><span class="line">    # 让feign使用apache httpclient做请求；而不是默认的urlconnection</span><br><span class="line">    enabled: true</span><br><span class="line">    # feign的最大连接数</span><br><span class="line">    max-connections: 200</span><br><span class="line">    # feign单个路径的最大连接数</span><br><span class="line">    max-connections-per-route: 50</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 
 
 
@@ -528,6 +511,35 @@
       </tags>
   </entry>
   <entry>
+    <title>8-01-雪崩效应</title>
+    <url>/2021/04/15/8-01-%E9%9B%AA%E5%B4%A9%E6%95%88%E5%BA%94/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>7-15-现有架构总结</title>
+    <url>/2021/04/15/7-15-%E7%8E%B0%E6%9C%89%E6%9E%B6%E6%9E%84%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8-02-常见容错方案</title>
     <url>/2021/04/15/8-02-%E5%B8%B8%E8%A7%81%E5%AE%B9%E9%94%99%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -536,18 +548,6 @@
 <p><img src="/2021/04/15/8-02-%E5%B8%B8%E8%A7%81%E5%AE%B9%E9%94%99%E6%96%B9%E6%A1%88/image-20210322223935586.png" alt="image-20210322223935586"></p>
 <p><img src="/2021/04/15/8-02-%E5%B8%B8%E8%A7%81%E5%AE%B9%E9%94%99%E6%96%B9%E6%A1%88/image-20210322224017552.png" alt="image-20210322224017552"></p>
 <p><img src="/2021/04/15/8-02-%E5%B8%B8%E8%A7%81%E5%AE%B9%E9%94%99%E6%96%B9%E6%A1%88/image-20210322224037841.png" alt="image-20210322224037841"></p>
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8-01-雪崩效应</title>
-    <url>/2021/04/15/8-01-%E9%9B%AA%E5%B4%A9%E6%95%88%E5%BA%94/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
 ]]></content>
       <tags>
         <tag>Spring Cloud alibaba 基础学习</tag>
@@ -642,6 +642,18 @@
       </tags>
   </entry>
   <entry>
+    <title>8-07-热点规则详解【使用、场景、注意点、源码】</title>
+    <url>/2021/04/15/8-07-%E7%83%AD%E7%82%B9%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3%E3%80%90%E4%BD%BF%E7%94%A8%E3%80%81%E5%9C%BA%E6%99%AF%E3%80%81%E6%B3%A8%E6%84%8F%E7%82%B9%E3%80%81%E6%BA%90%E7%A0%81%E3%80%91/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8-08-系统规则详解【使用、计算规则、源码】</title>
     <url>/2021/04/15/8-08-%E7%B3%BB%E7%BB%9F%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3%E3%80%90%E4%BD%BF%E7%94%A8%E3%80%81%E8%AE%A1%E7%AE%97%E8%A7%84%E5%88%99%E3%80%81%E6%BA%90%E7%A0%81%E3%80%91/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -654,8 +666,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-07-热点规则详解【使用、场景、注意点、源码】</title>
-    <url>/2021/04/15/8-07-%E7%83%AD%E7%82%B9%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3%E3%80%90%E4%BD%BF%E7%94%A8%E3%80%81%E5%9C%BA%E6%99%AF%E3%80%81%E6%B3%A8%E6%84%8F%E7%82%B9%E3%80%81%E6%BA%90%E7%A0%81%E3%80%91/</url>
+    <title>8-09-授权规则详解</title>
+    <url>/2021/04/15/8-09-%E6%8E%88%E6%9D%83%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -703,30 +715,6 @@
       </tags>
   </entry>
   <entry>
-    <title>8-09-授权规则详解</title>
-    <url>/2021/04/15/8-09-%E6%8E%88%E6%9D%83%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8-14-SentinelResource注解详解</title>
-    <url>/2021/04/15/8-14-SentinelResource%E6%B3%A8%E8%A7%A3%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8-13-SentinelAPI详解</title>
     <url>/2021/04/15/8-13-SentinelAPI%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -761,6 +749,18 @@
       </tags>
   </entry>
   <entry>
+    <title>8-14-SentinelResource注解详解</title>
+    <url>/2021/04/15/8-14-SentinelResource%E6%B3%A8%E8%A7%A3%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8-15-RestTemplate整合Sentinel</title>
     <url>/2021/04/15/8-15-RestTemplate%E6%95%B4%E5%90%88Sentinel/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -773,8 +773,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-17-Sentinel使用姿势总结</title>
-    <url>/2021/04/15/8-17-Sentinel%E4%BD%BF%E7%94%A8%E5%A7%BF%E5%8A%BF%E6%80%BB%E7%BB%93/</url>
+    <title>8-16-Feign整合Sentinel</title>
+    <url>/2021/04/15/8-16-Feign%E6%95%B4%E5%90%88Sentinel/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -785,8 +785,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-16-Feign整合Sentinel</title>
-    <url>/2021/04/15/8-16-Feign%E6%95%B4%E5%90%88Sentinel/</url>
+    <title>8-17-Sentinel使用姿势总结</title>
+    <url>/2021/04/15/8-17-Sentinel%E4%BD%BF%E7%94%A8%E5%A7%BF%E5%8A%BF%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -833,6 +833,18 @@
       </tags>
   </entry>
   <entry>
+    <title>8-21-集群流控</title>
+    <url>/2021/04/15/8-21-%E9%9B%86%E7%BE%A4%E6%B5%81%E6%8E%A7/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+
+]]></content>
+      <tags>
+        <tag>Spring Cloud alibaba 基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8-22-扩展Sentinel-01-错误页优化</title>
     <url>/2021/04/15/8-22-%E6%89%A9%E5%B1%95Sentinel-01-%E9%94%99%E8%AF%AF%E9%A1%B5%E4%BC%98%E5%8C%96/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -857,18 +869,6 @@
       </tags>
   </entry>
   <entry>
-    <title>8-21-集群流控</title>
-    <url>/2021/04/15/8-21-%E9%9B%86%E7%BE%A4%E6%B5%81%E6%8E%A7/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-
-]]></content>
-      <tags>
-        <tag>Spring Cloud alibaba 基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8-24-扩展Sentinel-03-RESTfulURL支持</title>
     <url>/2021/04/15/8-24-%E6%89%A9%E5%B1%95Sentinel-03-RESTfulURL%E6%94%AF%E6%8C%81/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -881,8 +881,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-26-配置项总结</title>
-    <url>/2021/04/15/8-26-%E9%85%8D%E7%BD%AE%E9%A1%B9%E6%80%BB%E7%BB%93/</url>
+    <title>8-25-扩展Sentinel-04-透过现象看本质</title>
+    <url>/2021/04/15/8-25-%E6%89%A9%E5%B1%95Sentinel-04-%E9%80%8F%E8%BF%87%E7%8E%B0%E8%B1%A1%E7%9C%8B%E6%9C%AC%E8%B4%A8/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -893,8 +893,8 @@
       </tags>
   </entry>
   <entry>
-    <title>8-25-扩展Sentinel-04-透过现象看本质</title>
-    <url>/2021/04/15/8-25-%E6%89%A9%E5%B1%95Sentinel-04-%E9%80%8F%E8%BF%87%E7%8E%B0%E8%B1%A1%E7%9C%8B%E6%9C%AC%E8%B4%A8/</url>
+    <title>8-26-配置项总结</title>
+    <url>/2021/04/15/8-26-%E9%85%8D%E7%BD%AE%E9%A1%B9%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<p>暂无说明</p>
 <a id="more"></a>
 
@@ -1040,17 +1040,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git操作</title>
-    <url>/2020/11/30/Git%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>暂无说明</p>
-<a id="more"></a>
-
-<h4 id="git-pull-push每次都需要输入密码问题"><a href="#git-pull-push每次都需要输入密码问题" class="headerlink" title="git pull/push每次都需要输入密码问题"></a>git pull/push每次都需要输入密码问题</h4>]]></content>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo初始</title>
     <url>/2021/04/15/Hexo%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
     <content><![CDATA[<p>暂无说明</p>
@@ -1120,6 +1109,17 @@
 
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>Git操作</title>
+    <url>/2020/11/30/Git%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>暂无说明</p>
+<a id="more"></a>
+
+<h4 id="git-pull-push每次都需要输入密码问题"><a href="#git-pull-push每次都需要输入密码问题" class="headerlink" title="git pull/push每次都需要输入密码问题"></a>git pull/push每次都需要输入密码问题</h4>]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
   <entry>
     <title>Maven基本使用</title>
